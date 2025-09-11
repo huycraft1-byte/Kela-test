@@ -9,76 +9,104 @@
   <meta property="og:description" content="Inox 304 an toàn, chống tràn. Giữ nóng 4–6h. Sale 30% hôm nay – Số lượng có hạn." />
   <meta property="og:image" content="assets/hero.png" />
   <meta name="theme-color" content="#ffffff" />
-  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --primary: #ff3b3b;
+      --dark: #1a1a1a;
+      --gray: #444;
+      --line: #ddd;
+    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fff; color: var(--dark); line-height: 1.6; }
+    .container { max-width: 1000px; margin: auto; padding: 20px; }
+    h1,h2,h3 { margin: 10px 0; font-weight: bold; }
+    .price { font-size: 1.6rem; margin: 10px 0; }
+    .price .sale { color: var(--primary); font-weight: bold; }
+    .price .old { text-decoration: line-through; color: #777; margin-left: 10px; }
+    .badge { background: var(--primary); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: .9rem; display: inline-block; margin: 10px 0; }
+    .cta { background: var(--primary); color: #fff; padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: bold; }
+    .cta:hover { opacity: .9; }
+    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; padding: 10px; border-top: 1px solid var(--line); text-align: center; }
+    .gallery-wrap { text-align: center; margin-bottom: 20px; }
+    .gallery { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }
+    .gallery .slide { flex: 0 0 100%; scroll-snap-align: center; }
+    .gallery img { width: 100%; max-height: 400px; object-fit: contain; }
+    .usp-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
+    .usp-block { border: 1px solid var(--line); border-radius: 18px; padding: 20px; text-align: center; }
+    .usp-block h2 { color: var(--dark); font-weight: 800; }
+    .usp-block img { width: min(280px, 80%); margin-top: 12px; border-radius: 12px; }
+    .review-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    .review-card { border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+    .review-card .avatar { width: 48px; height: 48px; border-radius: 50%; }
+    .policy-grid { display: grid; gap: 10px; margin: 20px 0; }
+    .faq details { margin: 10px 0; }
+    .popup { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,.6); justify-content: center; align-items: center; }
+    .popup-content { background: #fff; padding: 20px; border-radius: 12px; max-width: 400px; width: 90%; }
+  </style>
 </head>
 <body>
-  <!-- Hero Section -->
+  <!-- Hero -->
   <header class="section">
     <div class="container hero">
       <div class="gallery-wrap">
-        <div class="gallery" id="gallery">
-          <div class="slide"><img src="assets/1.png" alt="Cặp lồng giữ nhiệt Kela Đức 1,2L – ảnh 1"></div>
-          <div class="slide"><img src="assets/4.png" alt="Cặp lồng giữ nhiệt Kela Đức 1,2L – ảnh 4"></div>
-          <div class="slide"><img src="assets/5.png" alt="Cặp lồng giữ nhiệt Kela Đức 1,2L – ảnh 5"></div>
-          <div class="slide"><img src="assets/6.png" alt="Cặp lồng giữ nhiệt Kela Đức 1,2L – ảnh 6"></div>
-          <div class="slide"><img src="assets/2.png" alt="Cặp lồng giữ nhiệt Kela Đức 1,2L – ảnh 2"></div>
-          <div class="slide"><img src="assets/3.png" alt="Cặp lồng giữ nhiệt Kela Đức 1,2L – ảnh 3"></div>
+        <div class="gallery">
+          <div class="slide"><img src="assets/1.png" alt="Ảnh 1"></div>
+          <div class="slide"><img src="assets/4.png" alt="Ảnh 4"></div>
+          <div class="slide"><img src="assets/5.png" alt="Ảnh 5"></div>
+          <div class="slide"><img src="assets/6.png" alt="Ảnh 6"></div>
+          <div class="slide"><img src="assets/2.png" alt="Ảnh 2"></div>
+          <div class="slide"><img src="assets/3.png" alt="Ảnh 3"></div>
         </div>
       </div>
-      <div class="hero-copy">
-        <h1>Cặp lồng giữ nhiệt Kela Đức 1,2L</h1>
-        <p class="price"><span class="sale">350.000đ 🔥</span> <span class="old">480.000đ</span></p>
-        <p class="badge">SALE 30% hôm nay – Số lượng có hạn</p>
-        <div class="trust">
-          🚚 Freeship toàn quốc &nbsp; 🔄 Đổi trả 3 ngày &nbsp; 🛡️ Hàng chính hãng
-        </div>
-        <p class="countdown">⏰ Khuyến mãi kết thúc trong: <span id="timer">12:00:00</span></p>
-        <button class="cta" id="ctaTop">MUA NGAY – Giao tận nơi</button>
-      </div>
+      <h1>Cặp lồng giữ nhiệt Kela Đức 1,2L</h1>
+      <p class="price"><span class="sale">350.000đ 🔥</span> <span class="old">480.000đ</span></p>
+      <p class="badge">SALE 30% hôm nay – Số lượng có hạn</p>
+      <div>🚚 Freeship toàn quốc &nbsp; 🔄 Đổi trả 3 ngày &nbsp; 🛡️ Hàng chính hãng</div>
+      <p>⏰ Khuyến mãi kết thúc trong: <span id="timer">12:00:00</span></p>
+      <button class="cta" id="ctaTop">MUA NGAY – Giao tận nơi</button>
     </div>
   </header>
 
-  <!-- USP Section -->
+  <!-- USP -->
   <section class="section usp">
     <div class="container usp-grid">
       <div class="usp-block">
         <h2>🔥 Giữ nhiệt vượt trội cả ngày</h2>
-        <p>Nhờ <b>công nghệ chân không 2 lớp</b>, cặp lồng giúp <b>cơm canh luôn nóng hổi</b> đến trưa, đồng thời giữ lạnh hiệu quả nhiều giờ. Không còn lo <b>ăn cơm nguội hay đồ ăn ôi thiu</b> khi mang đi học hoặc đi làm.</p>
-        <img src="assets/5.png" alt="Giữ nhiệt vượt trội – ảnh minh họa">
+        <p>Nhờ <b>công nghệ chân không 2 lớp</b>, cặp lồng giúp <b>cơm canh luôn nóng hổi</b> đến trưa, đồng thời giữ lạnh hiệu quả nhiều giờ.</p>
+        <img src="assets/5.png" alt="USP 1">
       </div>
       <div class="usp-block">
         <h2>🛡️ Chất liệu Inox 304 cao cấp</h2>
-        <p>Làm từ <b>thép không gỉ 304</b>, sản phẩm <b>an toàn tuyệt đối cho sức khỏe</b>, không chứa BPA; chống gỉ sét, bền đẹp theo thời gian. Bền hơn hẳn các loại hộp giữ nhiệt giá rẻ ngoài thị trường.</p>
-        <img src="assets/4.png" alt="Chất liệu Inox 304 – ảnh minh họa">
+        <p>Làm từ <b>thép không gỉ 304</b>, sản phẩm <b>an toàn tuyệt đối cho sức khỏe</b>, chống gỉ sét, bền đẹp theo thời gian.</p>
+        <img src="assets/4.png" alt="USP 2">
       </div>
       <div class="usp-block">
         <h2>⚡ Thiết kế thông minh – 1,2L tiện lợi</h2>
-        <p>Dung tích <b>1,2L vừa đủ cho một bữa ăn trọn vẹn</b>, nắp khóa chắc chắn <b>chống tràn tuyệt đối</b>. Kèm <b>thìa inox gấp gọn</b> trong nắp, tiện lợi cho <b>dân văn phòng, sinh viên</b>, đi <b>du lịch – picnic</b>.</p>
-        <img src="assets/6.png" alt="Thiết kế 1,2L tiện lợi – ảnh minh họa">
+        <p>Dung tích <b>1,2L</b> vừa đủ cho một bữa ăn, nắp khóa chắc chắn <b>chống tràn</b>, kèm <b>thìa inox gấp gọn</b>.</p>
+        <img src="assets/6.png" alt="USP 3">
       </div>
     </div>
   </section>
 
-  <!-- Reviews -->
+  <!-- Review -->
   <section class="section reviews">
     <div class="container review-grid">
       <div class="review-card">
         <img class="avatar" src="assets/ava1.png" alt="Nguyễn Thảo">
         <h3>Nguyễn Thảo</h3>
-        <div class="stars">★★★★★</div>
-        <p>“Cơm mang từ sáng đến trưa vẫn <b>nóng hổi</b>, canh còn bốc hơi. Thiết kế gọn gàng, bỏ balo không lo đổ.”</p>
+        <div>★★★★★</div>
+        <p>“Cơm mang từ sáng đến trưa vẫn <b>nóng hổi</b>. Thiết kế gọn gàng, bỏ balo không lo đổ.”</p>
       </div>
       <div class="review-card">
         <img class="avatar" src="assets/ava2.png" alt="Minh Quân">
         <h3>Minh Quân</h3>
-        <div class="stars">★★★★★</div>
-        <p>“Từ ngày mua hộp này, mình <b>tự nấu mang đi học</b>, vừa ngon vừa tiết kiệm. <b>Thìa inox gấp gọn</b> siêu tiện.”</p>
+        <div>★★★★★</div>
+        <p>“Từ ngày mua hộp này, mình <b>tự nấu mang đi học</b>, vừa ngon vừa tiết kiệm.”</p>
       </div>
       <div class="review-card">
         <img class="avatar" src="assets/ava3.png" alt="Thu Hà">
         <h3>Thu Hà</h3>
-        <div class="stars">★★★★★</div>
-        <p>“Chuẩn bị đồ cho con, hộp giúp <b>giữ nóng cả buổi</b>, bé ăn ngon hơn. <b>Inox 304 an toàn</b> nên rất yên tâm.”</p>
+        <div>★★★★★</div>
+        <p>“Hộp giúp <b>giữ nóng cả buổi</b>, bé ăn ngon hơn. <b>Inox 304</b> an toàn nên yên tâm.”</p>
       </div>
     </div>
   </section>
@@ -96,18 +124,9 @@
   <section class="section faq">
     <div class="container">
       <h2>Câu hỏi thường gặp</h2>
-      <details>
-        <summary>Hộp giữ nóng được bao lâu?</summary>
-        <p>Trung bình <b>4–6 giờ nóng</b>, <b>6–8 giờ lạnh</b> (tùy điều kiện sử dụng).</p>
-      </details>
-      <details>
-        <summary>Có bị tràn khi để trong balo không?</summary>
-        <p><b>Không bị tràn</b> nhờ nắp khóa kín chống rò rỉ.</p>
-      </details>
-      <details>
-        <summary>Sản phẩm có kèm thìa không?</summary>
-        <p>Có, <b>thìa inox gấp gọn</b> nằm trong nắp.</p>
-      </details>
+      <details><summary>Hộp giữ nóng được bao lâu?</summary><p><b>4–6 giờ nóng</b>, <b>6–8 giờ lạnh</b>.</p></details>
+      <details><summary>Có bị tràn khi để trong balo?</summary><p><b>Không</b>, nhờ nắp khóa kín.</p></details>
+      <details><summary>Có kèm thìa không?</summary><p>Có, <b>thìa inox gấp gọn</b> trong nắp.</p></details>
     </div>
   </section>
 
@@ -124,86 +143,38 @@
     <button class="cta" id="ctaSticky">Mua ngay – Giảm 30%</button>
   </div>
 
-  <!-- Popup Form COD -->
+  <!-- Popup Form -->
   <div class="popup" id="popupForm">
     <div class="popup-content">
       <h2>Thông tin đặt hàng</h2>
       <form id="orderForm">
         <label>Chọn màu:</label>
-        <select id="mau">
-          <option value="Inox">Inox</option>
-          <option value="Hồng">Hồng</option>
-        </select>
+        <select id="mau"><option>Inox</option><option>Hồng</option></select>
         <label>Chọn combo:</label>
-        <select id="combo">
-          <option value="Mua 1 (350K)">Mua 1 (350K)</option>
-          <option value="Mua 2 – Giảm thêm 10%">Mua 2 – Giảm thêm 10%</option>
-        </select>
-        <label>Họ tên *</label>
-        <input type="text" id="hoten" required>
-        <label>Số điện thoại *</label>
-        <input type="tel" id="sdt" required>
-        <label>Địa chỉ *</label>
-        <input type="text" id="diachi" required>
-        <label>Ghi chú</label>
-        <input type="text" id="ghichu">
+        <select id="combo"><option>Mua 1 (350K)</option><option>Mua 2 – Giảm thêm 10%</option></select>
+        <label>Họ tên *</label><input type="text" id="hoten" required>
+        <label>Số điện thoại *</label><input type="tel" id="sdt" required>
+        <label>Địa chỉ *</label><input type="text" id="diachi" required>
+        <label>Ghi chú</label><input type="text" id="ghichu">
         <button type="submit">Xác nhận đặt hàng</button>
       </form>
     </div>
   </div>
 
   <script>
-    // Countdown 12h reset
-    function startCountdown(duration, display) {
-      let timer = duration, hours, minutes, seconds;
-      setInterval(() => {
-        hours = parseInt(timer / 3600, 10);
-        minutes = parseInt((timer % 3600) / 60, 10);
-        seconds = parseInt(timer % 60, 10);
-        hours = hours < 10 ? "0" + hours : hours;
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-        display.textContent = hours + ":" + minutes + ":" + seconds;
-        if (--timer < 0) { timer = duration; }
-      }, 1000);
-    }
-    window.onload = () => {
-      const twelveHours = 60 * 60 * 12;
-      const display = document.querySelector('#timer');
-      startCountdown(twelveHours, display);
-    };
-
-    // Popup form toggle
-    const popup = document.getElementById('popupForm');
-    const buttons = [document.getElementById('ctaTop'), document.getElementById('ctaBottom'), document.getElementById('ctaSticky')];
-    buttons.forEach(btn => btn.addEventListener('click', () => popup.style.display = 'flex'));
-
-    // Form submit
-    document.getElementById("orderForm").addEventListener("submit", function(e) {
+    // Countdown 12h
+    function startCountdown(duration, display){
+      let timer=duration,h,m,s;setInterval(()=>{h=parseInt(timer/3600,10);m=parseInt((timer%3600)/60,10);s=parseInt(timer%60,10);h=h<10?"0"+h:h;m=m<10?"0"+m:m;s=s<10?"0"+s:s;display.textContent=h+":"+m+":"+s;if(--timer<0)timer=duration;},1000)}
+    window.onload=()=>{startCountdown(43200,document.querySelector('#timer'))};
+    // Popup
+    const popup=document.getElementById('popupForm');
+    ["ctaTop","ctaBottom","ctaSticky"].forEach(id=>document.getElementById(id).addEventListener("click",()=>popup.style.display='flex'));
+    // Submit form
+    document.getElementById("orderForm").addEventListener("submit",e=>{
       e.preventDefault();
-      const data = {
-        hoten: document.getElementById("hoten").value,
-        sdt: document.getElementById("sdt").value,
-        diachi: document.getElementById("diachi").value,
-        ghichu: document.getElementById("ghichu").value,
-        mau: document.getElementById("mau").value,
-        combo: document.getElementById("combo").value
-      };
-      fetch("https://script.google.com/macros/s/AKfycbwch0w8Rz-F8MhOa79B3sS8pDKGt0bt4U0ZhA1xwFs2vCctSWaVwgBgD4jgkQlsgWDPUQ/exec", {
-        method: "POST",
-        body: JSON.stringify(data)
-      })
-      .then(res => res.text())
-      .then(response => {
-        if(response === "SUCCESS") {
-          alert("✅ Đặt hàng thành công – Shop sẽ liên hệ trong 24h!");
-          document.getElementById("orderForm").reset();
-          popup.style.display = 'none';
-        } else {
-          alert("❌ Có lỗi xảy ra, vui lòng thử lại!");
-        }
-      })
-      .catch(err => alert("⚠️ Lỗi kết nối: " + err));
+      const data={hoten:hoten.value,sdt:sdt.value,diachi:diachi.value,ghichu:ghichu.value,mau:mau.value,combo:combo.value};
+      fetch("https://script.google.com/macros/s/AKfycbwch0w8Rz-F8MhOa79B3sS8pDKGt0bt4U0ZhA1xwFs2vCctSWaVwgBgD4jgkQlsgWDPUQ/exec",{method:"POST",body:JSON.stringify(data)})
+      .then(r=>r.text()).then(res=>{if(res==="SUCCESS"){alert("✅ Đặt hàng thành công – Shop sẽ liên hệ trong 24h!");orderForm.reset();popup.style.display='none'}else alert("❌ Có lỗi xảy ra!")}).catch(err=>alert("⚠️ Lỗi kết nối: "+err));
     });
   </script>
 </body>
