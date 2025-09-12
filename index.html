@@ -3,73 +3,88 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>Cặp lồng giữ nhiệt Kela Đức 1,2L – Giảm 30% hôm nay</title>
-  <meta name="description" content="Cặp lồng giữ nhiệt Kela 1,2L – Inox 304 an toàn, chống tràn, kèm thìa gấp. Giữ nóng 4–6h. Sale 30% hôm nay – Số lượng có hạn." />
+  <title>Cặp lồng giữ nhiệt Kela Đức 1,2L – SALE 60% hôm nay</title>
+  <meta name="description" content="Cặp lồng giữ nhiệt Kela 1,2L – Inox 304 an toàn, chống tràn, kèm thìa gấp. Giữ nóng 4–6h. SALE 60% hôm nay – Số lượng có hạn." />
   <meta name="theme-color" content="#ffffff" />
   <style>
-    :root{--accent:#ff4d4f;--dark:#121212;--muted:#6b7280;--line:#e5e7eb;--bg:#ffffff;}
+    :root{--accent:#ff4d4f;--dark:#121212;--muted:#6b7280;--line:#e5e7eb;--bg:#ffffff;--content:720px}
     *{box-sizing:border-box}
     html,body{height:100%}
     body{margin:0;background:var(--bg);color:var(--dark);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6;overflow-x:hidden;padding-bottom:74px}
-    img{max-width:100%;display:block}
+    img{max-width:100%;display:block;-webkit-user-drag:none;user-select:none}
     .container{width:min(1200px,92%);margin-inline:auto}
     .section{padding:28px 0}
     .muted{color:var(--muted)}
 
     /* ===== HERO (PC 2 cột, Mobile 1 cột) ===== */
-    .hero{display:grid;grid-template-columns:1.05fr 1fr;gap:32px;align-items:center}
+    .hero{display:grid;grid-template-columns:1.05fr 1fr;gap:32px;align-items:start}
     @media(max-width:992px){.hero{grid-template-columns:1fr}}
 
     /* gallery chính */
     .hero-left{}
-    .hero-main{position:relative;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:14px;border:1px solid var(--line);aspect-ratio:16/12;background:#f9fafb}
+    .hero-main{position:relative;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:14px;border:1px solid var(--line);background:#fff;aspect-ratio:1/1}
     .hero-main::-webkit-scrollbar{display:none}
     .slide{flex:0 0 100%;scroll-snap-align:center}
-    .slide img{width:100%;height:100%;object-fit:cover;object-position:center}
-    @media(max-width:768px){.hero-main{aspect-ratio:4/5}}
+    .slide img{width:100%;height:100%;object-fit:contain;object-position:center;background:#fff}
+    /* pagination inside image */
+    .hero-fraction{position:absolute;right:10px;bottom:10px;background:rgba(17,17,17,.6);color:#fff;font-size:12px;padding:4px 8px;border-radius:999px}
 
     /* thumbnails */
     .hero-thumbs{display:flex;gap:10px;overflow-x:auto;margin-top:10px;padding-bottom:2px}
     .hero-thumbs img{width:64px;height:64px;object-fit:cover;border-radius:8px;border:2px solid transparent;cursor:pointer;flex:0 0 auto}
     .hero-thumbs img.active{border-color:var(--accent)}
-    .hero-count{margin-top:6px;text-align:right;font-size:13px;color:var(--muted)}
 
     /* hero info */
     .hero-title{font-size:clamp(22px,3vw,34px);margin:6px 0 8px;font-weight:800}
     .price{font-size:clamp(18px,2.2vw,26px);font-weight:800;color:var(--accent)}
-    .price .old{margin-left:10px;text-decoration:line-through;color:#9ca3af;font-weight:600}
-    .badge{display:inline-block;background:var(--accent);color:#fff;border-radius:999px;padding:6px 12px;margin:10px 0;font-weight:600;font-size:14px}
+    .price .old{margin-left:10px;text-decoration:line-through;color:#9ca3af;font-weight:700}
+    .badge{display:inline-block;background:var(--accent);color:#fff;border-radius:999px;padding:6px 12px;margin:10px 0;font-weight:700;font-size:14px}
     .pills{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
     .pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:14px;color:#374151}
     .timer{margin:8px 0}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:#fff;border:none;border-radius:10px;padding:12px 18px;font-weight:800;cursor:pointer}
     .btn:active{transform:translateY(1px)}
 
-    /* ===== USP / DESCRIPTION (full width, không card) ===== */
+    /* ===== DESCRIPTION / USP (full width, text->img, ảnh không phình) ===== */
     .usp{padding:30px 0}
-    .usp-block{text-align:center;margin:28px auto;max-width:900px}
+    .usp-block{text-align:center;margin:28px auto;max-width:var(--content)}
     .usp-block h2{font-size:clamp(20px,2.6vw,28px);margin-bottom:8px;font-weight:800}
     .usp-block p{margin:0 auto 14px;color:var(--muted);font-size:clamp(15px,2.2vw,18px);max-width:78ch}
-    .usp-block img{width:100%;border-radius:14px;border:1px solid var(--line)}
+    .usp-block img, .usp-block video{width:100%;border-radius:14px;border:1px solid var(--line)}
 
     /* ===== REVIEWS (carousel ngang) ===== */
-    .reviews{background:#fafafa;padding:34px 0}
+    .reviews{background:#fafafa;padding:34px 0;position:relative}
     .reviews h2{text-align:center;font-size:clamp(20px,2.6vw,28px);margin-bottom:18px;font-weight:800}
+    .rev-wrap{position:relative}
     .rev-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 clamp(14px,6vw,48px)}
+    .rev-track::-webkit-scrollbar{height:8px}
     .rev-card{flex:0 0 84%;scroll-snap-align:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center;box-shadow:0 6px 20px rgba(17,24,39,.06)}
     .rev-card img{width:100%;max-width:220px;border-radius:10px;margin-inline:auto}
     .rev-name{font-weight:800;margin-top:10px}
     .stars{color:#f59e0b;letter-spacing:2px}
     .rev-text{color:var(--muted);margin-top:6px}
     @media(min-width:992px){.rev-card{flex:0 0 32%}}
+    /* overlay arrows (PC) */
+    .rev-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.9);backdrop-filter:blur(6px);display:grid;place-items:center;cursor:pointer;z-index:2}
+    .rev-arrow.left{left:8px}
+    .rev-arrow.right{right:8px}
+    @media(max-width:991px){.rev-arrow{display:none}}
 
-    /* ===== FAQ & TRUST ===== */
-    .faq h2{text-align:center;font-weight:800;margin-bottom:10px}
-    details{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:10px 0}
-    summary{cursor:pointer;font-weight:700}
+    /* ===== FAQ (Shopify style) ===== */
+    .faq{padding:30px 0}
+    .faq h2{text-align:center;font-weight:800;margin-bottom:16px;font-size:clamp(20px,2.6vw,28px)}
+    details{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px auto;max-width:var(--content);background:#fff}
+    summary{cursor:pointer;font-weight:800;list-style:none}
+    summary::-webkit-details-marker{display:none}
+    summary:before{content:'❓';margin-right:8px}
+    details[open]{background:#f9fafb}
+    details p{margin:8px 0 0;color:#374151}
+
+    /* ===== TRUST ===== */
     .trust{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:16px auto;color:#4b5563}
 
-    /* ===== Sticky CTA (mobile) ===== */
+    /* ===== CTA cuối + Sticky CTA (mobile) ===== */
+    .cta-section{text-align:center}
     .cta-sticky{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px;z-index:9999;display:none}
     .cta-sticky .btn{width:100%}
     @media(max-width:768px){.cta-sticky{display:block}}
@@ -83,6 +98,23 @@
     .field label{font-size:14px;color:#374151}
     .field input,.field select{width:100%;padding:10px 12px;margin-top:6px;border:1px solid #d1d5db;border-radius:8px;font-size:15px}
     .popup-box .btn{width:100%;margin-top:12px}
+
+    /* ===== Popup cảm ơn ===== */
+    .toast{display:none;position:fixed;inset:0;z-index:11000;background:rgba(0,0,0,.5);align-items:center;justify-content:center}
+    .toast .box{background:#fff;border-radius:14px;padding:18px 20px;max-width:90%;width:360px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+    .toast .box h4{margin:0 0 6px;font-size:18px}
+    .toast .box p{margin:0;color:#374151}
+
+    /* ===== Footer (đỏ-trắng) ===== */
+    footer{background:#fff;border-top:1px solid var(--line);padding:24px 0}
+    .footer-usp{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1000px;margin:0 auto 18px}
+    .footer-usp .item{border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
+    .footer-cols{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;max-width:1000px;margin:0 auto}
+    .brand h3{margin:0 0 6px;font-weight:800}
+    .brand p{color:#374151;margin:0}
+    .contact div{margin:6px 0}
+    .copy{text-align:center;color:#6b7280;margin-top:16px}
+    @media(max-width:768px){.footer-usp{grid-template-columns:1fr}.footer-cols{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -97,6 +129,7 @@
           <div class="slide"><img src="assets/6.png" alt="Ảnh 6"></div>
           <div class="slide"><img src="assets/2.png" alt="Ảnh 2"></div>
           <div class="slide"><img src="assets/3.png" alt="Ảnh 3"></div>
+          <div class="hero-fraction" id="heroFrac">1/6</div>
         </div>
         <div class="hero-thumbs" id="heroThumbs">
           <img src="assets/1.png" data-i="0" class="active" alt>
@@ -106,14 +139,13 @@
           <img src="assets/2.png" data-i="4" alt>
           <img src="assets/3.png" data-i="5" alt>
         </div>
-        <div class="hero-count" id="heroCount">1/6</div>
       </div>
 
       <!-- RIGHT: INFO -->
       <div class="hero-right">
         <h1 class="hero-title">Cặp lồng giữ nhiệt Kela Đức 1,2L</h1>
-        <div class="price">350.000đ 🔥 <span class="old">480.000đ</span></div>
-        <div class="badge">SALE 30% hôm nay – Số lượng có hạn</div>
+        <div class="price">350.000đ 🔥 <span class="old">870.000đ</span></div>
+        <div class="badge">SALE 60% hôm nay – Số lượng có hạn</div>
         <div class="pills">
           <span class="pill">🚚 Freeship toàn quốc</span>
           <span class="pill">🔄 Đổi trả 3 ngày</span>
@@ -130,18 +162,18 @@
     <div class="container">
       <div class="usp-block">
         <h2>🔥 Giữ nhiệt vượt trội cả ngày</h2>
-        <p>Nhờ <b>công nghệ chân không 2 lớp</b>, cặp lồng giúp <b>cơm canh luôn nóng hổi</b> đến trưa, đồng thời giữ lạnh hiệu quả nhiều giờ.</p>
-        <img src="assets/5.png" alt="Giữ nhiệt vượt trội – ảnh minh họa" />
+        <p>Nhờ <b>công nghệ chân không 2 lớp</b>, cặp lồng <b>Kela</b> giúp <b>cơm canh luôn nóng hổi</b> đến trưa, đồng thời giữ lạnh hiệu quả nhiều giờ, mang đến trải nghiệm tiện lợi cho cả gia đình.</p>
+        <img src="assets/1.png" alt="Giữ nhiệt vượt trội – ảnh minh họa" />
       </div>
       <div class="usp-block">
         <h2>🛡️ Chất liệu Inox 304 cao cấp</h2>
-        <p>Làm từ <b>thép không gỉ 304</b>, sản phẩm <b>an toàn tuyệt đối cho sức khỏe</b>, không chứa BPA; chống gỉ sét, bền đẹp theo thời gian.</p>
-        <img src="assets/4.png" alt="Inox 304 – ảnh minh họa" />
+        <p><b>Kela</b> sử dụng <b>thép không gỉ 304</b> an toàn tuyệt đối cho sức khỏe, chống gỉ sét, bền đẹp theo thời gian. Lựa chọn lý tưởng cho những ai đề cao độ bền và vệ sinh.</p>
+        <img src="assets/2.png" alt="Inox 304 – ảnh minh họa" />
       </div>
       <div class="usp-block">
-        <h2>⚡ Thiết kế thông minh – 1,2L tiện lợi</h2>
-        <p>Dung tích <b>1,2L</b> vừa đủ cho một bữa ăn trọn vẹn, nắp khóa chắc chắn <b>chống tràn tuyệt đối</b>. Kèm <b>thìa inox gấp gọn</b> trong nắp.</p>
-        <img src="assets/6.png" alt="Thiết kế 1,2L – ảnh minh họa" />
+        <h2>👌 Thiết kế gọn gàng – Tiện lợi</h2>
+        <p>Thiết kế <b>nhỏ gọn</b>, dễ mang theo đi làm, đi học hay picnic. Có <b>thìa inox gấp gọn</b> đặt trong nắp, sạch sẽ và tiện dụng mọi lúc, mọi nơi.</p>
+        <img src="assets/3.png" alt="Thiết kế 1,2L – ảnh minh họa" />
       </div>
     </div>
   </section>
@@ -151,25 +183,29 @@
     <div class="container">
       <h2>✨ Trải nghiệm thực tế từ khách hàng</h2>
     </div>
-    <div class="rev-track" id="revTrack">
-      <article class="rev-card">
-        <img src="assets/1.png" alt>
-        <div class="rev-name">Nguyễn Thảo</div>
-        <div class="stars">★★★★★</div>
-        <div class="rev-text">“Cơm mang từ sáng đến trưa vẫn nóng hổi, thiết kế gọn gàng.”</div>
-      </article>
-      <article class="rev-card">
-        <img src="assets/3.png" alt>
-        <div class="rev-name">Minh Quân</div>
-        <div class="stars">★★★★★</div>
-        <div class="rev-text">“Chống tràn tốt, inox dày dặn, rất tiện mang đi làm.”</div>
-      </article>
-      <article class="rev-card">
-        <img src="assets/6.png" alt>
-        <div class="rev-name">Thu Hà</div>
-        <div class="stars">★★★★★</div>
-        <div class="rev-text">“Hộp giữ nóng cả buổi, bé ăn ngon hơn. Inox 304 yên tâm.”</div>
-      </article>
+    <div class="rev-wrap">
+      <button class="rev-arrow left" id="revPrev" aria-label="Xem trước">◀</button>
+      <button class="rev-arrow right" id="revNext" aria-label="Xem tiếp">▶</button>
+      <div class="rev-track" id="revTrack">
+        <article class="rev-card">
+          <img src="assets/1.png" alt>
+          <div class="rev-name">Nguyễn Thảo</div>
+          <div class="stars">★★★★★</div>
+          <div class="rev-text">“Cơm mang từ sáng đến trưa vẫn nóng hổi. Thiết kế gọn gàng, bỏ balo không lo đổ.”</div>
+        </article>
+        <article class="rev-card">
+          <img src="assets/3.png" alt>
+          <div class="rev-name">Thu Hà</div>
+          <div class="stars">★★★★★</div>
+          <div class="rev-text">“Hộp giúp giữ nóng cả buổi, bé ăn ngon hơn. Inox 304 an toàn nên yên tâm.”</div>
+        </article>
+        <article class="rev-card">
+          <img src="assets/6.png" alt>
+          <div class="rev-name">Minh Khoa</div>
+          <div class="stars">★★★★★</div>
+          <div class="rev-text">“Sản phẩm chắc chắn, giữ nhiệt cực tốt. Giao hàng nhanh và đóng gói cẩn thận.”</div>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -177,17 +213,17 @@
   <section class="section faq">
     <div class="container">
       <h2>Câu hỏi thường gặp</h2>
-      <details open>
+      <details>
         <summary>Hộp giữ nóng được bao lâu?</summary>
-        <div><b>4–6 giờ nóng</b>, <b>6–8 giờ lạnh</b>.</div>
+        <p>Cặp lồng giữ nhiệt <b>Kela</b> có khả năng <b>giữ nóng 4–6 giờ</b> và <b>giữ lạnh 6–8 giờ</b> tùy điều kiện sử dụng (nhiệt độ môi trường, lượng đồ ăn). Nhờ <b>công nghệ chân không 2 lớp</b>, món ăn luôn giữ được độ tươi ngon, hạn chế thất thoát nhiệt tốt hơn so với các sản phẩm thông thường.</p>
       </details>
       <details>
         <summary>Có bị tràn khi để trong balo?</summary>
-        <div><b>Không</b>, nhờ nắp khóa kín và ron chống tràn.</div>
+        <p><b>Không</b>. Nắp khóa kín và <b>ron chống tràn</b> giúp bạn an tâm khi để trong balo/túi xách. Thiết kế của <b>Kela</b> đã được tối ưu để hạn chế rò rỉ trong quá trình di chuyển.</p>
       </details>
       <details>
         <summary>Có kèm thìa không?</summary>
-        <div>Có, <b>thìa inox gấp gọn</b> nằm trong nắp.</div>
+        <p><b>Có</b>. Sản phẩm đi kèm <b>thìa inox gấp gọn</b> đặt trong nắp, vừa vệ sinh vừa tiết kiệm không gian. Đây là chi tiết nhỏ nhưng mang lại sự tiện lợi lớn, thể hiện sự tinh tế trong thiết kế của <b>Kela</b>.</p>
       </details>
     </div>
   </section>
@@ -200,15 +236,15 @@
   </div>
 
   <!-- CTA cuối -->
-  <section class="section">
-    <div class="container" style="text-align:center">
+  <section class="section cta-section">
+    <div class="container">
       <button class="btn" id="ctaBottom">ĐẶT HÀNG NGAY</button>
       <div class="muted" style="margin-top:8px">Thông tin của bạn chỉ dùng để liên hệ & giao hàng.</div>
     </div>
   </section>
 
   <!-- Sticky CTA (mobile) -->
-  <div class="cta-sticky"><button class="btn" id="ctaSticky">Mua ngay – Giảm 30%</button></div>
+  <div class="cta-sticky"><button class="btn" id="ctaSticky">Mua ngay – Giảm 60%</button></div>
 
   <!-- POPUP FORM COD -->
   <div class="popup" id="popup">
@@ -233,46 +269,85 @@
     </div>
   </div>
 
+  <!-- POPUP CẢM ƠN -->
+  <div class="toast" id="toast">
+    <div class="box">
+      <h4>✅ Cảm ơn bạn đã đặt hàng!</h4>
+      <p>Nhân viên sẽ liên hệ xác nhận đơn hàng trong thời gian sớm nhất.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-usp">
+      <div class="item">🚚 Freeship toàn quốc</div>
+      <div class="item">🔄 Đổi trả trong 3 ngày</div>
+      <div class="item">🛡️ Hàng chính hãng</div>
+    </div>
+    <div class="footer-cols">
+      <div class="brand">
+        <h3 style="color:var(--accent)">Kela</h3>
+        <p>Chúng tôi tin rằng một sản phẩm tốt không chỉ giúp bạn tiện lợi hơn trong cuộc sống mà còn mang lại sự an tâm cho sức khỏe cả gia đình.</p>
+      </div>
+      <div class="contact">
+        <div>🏠 Địa chỉ: 2b Vương Thừa Vũ</div>
+        <div>☎️ Hotline: 0915593392</div>
+        <div>📧 Email: stgd@gmail.com</div>
+      </div>
+    </div>
+    <div class="copy">© Kela 2025. All rights reserved.</div>
+  </footer>
+
   <script>
     // ===== Countdown 12h =====
     (function(){const el=document.getElementById('timer');let t=12*60*60;setInterval(()=>{const h=String(Math.floor(t/3600)).padStart(2,'0');const m=String(Math.floor((t%3600)/60)).padStart(2,'0');const s=String(t%60).padStart(2,'0');el.textContent=`${h}:${m}:${s}`;t=t>0?t-1:12*60*60},1000)})();
 
     // ===== Popup open/close =====
     const popup=document.getElementById('popup');
-    ['ctaTop','ctaBottom','ctaSticky'].forEach(id=>{
-      const b=document.getElementById(id);if(b) b.addEventListener('click',()=>popup.style.display='flex');
-    });
+    ['ctaTop','ctaBottom','ctaSticky'].forEach(id=>{const b=document.getElementById(id);if(b) b.addEventListener('click',()=>popup.style.display='flex')});
     document.getElementById('popupClose').onclick=()=>popup.style.display='none';
     popup.addEventListener('click',e=>{if(e.target===popup) popup.style.display='none'});
 
-    // ===== Submit to Google Apps Script =====
+    // ===== Submit to Google Apps Script + Thank-you popup =====
+    const toast=document.getElementById('toast');
+    function showToast(){toast.style.display='flex';setTimeout(()=>toast.style.display='none'),1;setTimeout(()=>toast.style.display='none',4000)}
     document.getElementById('orderForm').addEventListener('submit',async(e)=>{
       e.preventDefault();
-      const data={
-        hoten:hoten.value.trim(),sdt:sdt.value.trim(),diachi:diachi.value.trim(),ghichu:ghichu.value.trim(),mau:mau.value,combo:combo.value
-      };
+      const data={hoten:hoten.value.trim(),sdt:sdt.value.trim(),diachi:diachi.value.trim(),ghichu:ghichu.value.trim(),mau:mau.value,combo:combo.value};
       try{
         const r=await fetch('https://script.google.com/macros/s/AKfycbwch0w8Rz-F8MhOa79B3sS8pDKGt0bt4U0ZhA1xwFs2vCctSWaVwgBgD4jgkQlsgWDPUQ/exec',{method:'POST',body:JSON.stringify(data)});
         const text=await r.text();
-        if(text==='SUCCESS'){alert('✅ Đặt hàng thành công – Shop sẽ liên hệ trong 24h!'); e.target.reset(); popup.style.display='none'}
+        if(text==='SUCCESS'){showToast(); e.target.reset(); popup.style.display='none'}
         else alert('⚠️ Gửi thất bại, vui lòng thử lại.');
       }catch(err){alert('⚠️ Lỗi mạng: '+err)}
     });
 
-    // ===== Hero gallery: thumbs + fraction + sync khi scroll =====
+    // ===== Hero gallery: thumbs + fraction + sync khi scroll + drag on desktop =====
     const heroMain=document.getElementById('heroMain');
     const heroThumbs=document.getElementById('heroThumbs');
-    const heroCount=document.getElementById('heroCount');
-    const total=heroMain.children.length; let lock=false;
+    const heroFrac=document.getElementById('heroFrac');
+    const total=heroMain.querySelectorAll('.slide').length; let lock=false;
 
     function setActive(i){
       heroThumbs.querySelectorAll('img').forEach((t,idx)=>t.classList.toggle('active',idx===i));
-      heroCount.textContent=`${i+1}/${total}`;
+      heroFrac.textContent=`${i+1}/${total}`;
     }
     function snapTo(i){lock=true; heroMain.scrollTo({left:i*heroMain.clientWidth,behavior:'smooth'}); setTimeout(()=>lock=false,350); setActive(i)}
-    heroThumbs.addEventListener('click',(e)=>{const t=e.target.closest('img[data-i]'); if(!t) return; snapTo(+t.dataset.i)})
+    heroThumbs.addEventListener('click',(e)=>{const t=e.target.closest('img[data-i]'); if(!t) return; snapTo(+t.dataset.i)});
     heroMain.addEventListener('scroll',()=>{ if(lock) return; const i=Math.round(heroMain.scrollLeft/heroMain.clientWidth); setActive(Math.max(0,Math.min(total-1,i))); });
     setActive(0);
+    // drag to scroll (desktop)
+    let isDown=false,startX,scrollL; heroMain.addEventListener('mousedown',e=>{isDown=true;startX=e.pageX;scrollL=heroMain.scrollLeft});
+    ['mouseleave','mouseup'].forEach(ev=>heroMain.addEventListener(ev,()=>isDown=false));
+    heroMain.addEventListener('mousemove',e=>{if(!isDown)return; e.preventDefault(); heroMain.scrollLeft=scrollL-(e.pageX-startX)});
+
+    // ===== Reviews: arrows + drag =====
+    const revTrack=document.getElementById('revTrack');
+    document.getElementById('revPrev').addEventListener('click',()=>revTrack.scrollBy({left:-revTrack.clientWidth*0.9,behavior:'smooth'}));
+    document.getElementById('revNext').addEventListener('click',()=>revTrack.scrollBy({left: revTrack.clientWidth*0.9,behavior:'smooth'}));
+    let dDown=false,dStartX,dScroll; revTrack.addEventListener('mousedown',e=>{dDown=true;dStartX=e.pageX;dScroll=revTrack.scrollLeft});
+    ['mouseleave','mouseup'].forEach(ev=>revTrack.addEventListener(ev,()=>dDown=false));
+    revTrack.addEventListener('mousemove',e=>{if(!dDown)return; e.preventDefault(); revTrack.scrollLeft=dScroll-(e.pageX-dStartX)});
   </script>
 </body>
 </html>
