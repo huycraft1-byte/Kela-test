@@ -4,124 +4,204 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cặp lồng giữ nhiệt Kela Đức 1,2L</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; }
-    .hero { display:flex; flex-wrap:wrap; padding:20px; }
-    .hero .images { flex:1; min-width:300px; }
-    .hero .content { flex:1; padding:20px; display:flex; flex-direction:column; justify-content:flex-start; }
-    .price { color:red; font-weight:bold; font-size:1.2em; }
-    .old-price { text-decoration:line-through; color:#777; margin-left:10px; }
-    .cta { background:#ff4d4f; color:#fff; padding:12px 20px; border:none; border-radius:6px; cursor:pointer; margin-top:10px; }
-    .section { padding:40px 20px; text-align:center; max-width:900px; margin:auto; }
-    .swiper { width:100%; height:auto; }
-    .review, .faq, .video { margin-top:40px; }
-    footer { background:#f7f7f7; padding:20px; text-align:center; font-size:14px; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fff; color: #000;}
+    .container { max-width: 1200px; margin: auto; padding: 20px;}
+    h2 { font-size: 22px; margin: 20px 0; display: flex; align-items: center; gap: 8px;}
+    .hero { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start;}
+    .hero-images { flex: 1; min-width: 300px;}
+    .hero-text { flex: 1; min-width: 280px;}
+    .price { color: red; font-size: 22px; font-weight: bold;}
+    .old-price { text-decoration: line-through; margin-left: 10px; color: gray;}
+    .cta { background: #ff4d4d; color: white; padding: 12px 20px; border: none; border-radius: 8px; font-size: 18px; cursor: pointer;}
+    .countdown { margin-top: 10px; color: red; font-weight: bold;}
+    .swiper { width: 100%; height: auto; margin-bottom: 10px;}
+    .swiper-slide img, .swiper-slide video { width: 100%; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+    .thumbnail-swiper .swiper-slide { opacity: 0.6; cursor: pointer;}
+    .thumbnail-swiper .swiper-slide-thumb-active { opacity: 1; border: 2px solid #ff4d4d;}
+    .section { margin: 40px 0; text-align: center;}
+    .reviews, .faq { max-width: 960px; margin: auto;}
+    .review-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 16px; text-align: left;}
+    .faq-item { margin: 10px 0; text-align: left;}
+    .faq-question { font-weight: bold; cursor: pointer;}
+    .faq-answer { display: none; margin-top: 5px;}
+    footer { background: #f5f5f5; padding: 20px; text-align: center; font-size: 14px;}
+    .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #fff; padding: 10px; border-top: 1px solid #ddd; text-align: center;}
+    .sticky-cta button { background: #ff4d4d; color: #fff; border: none; padding: 12px 20px; font-size: 18px; border-radius: 8px;}
+    @media(max-width: 768px){
+      .hero { flex-direction: column;}
+      .sticky-cta { display: block;}
+    }
+    .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); justify-content: center; align-items: center;}
+    .modal-content { background: #fff; padding: 20px; border-radius: 12px; width: 90%; max-width: 400px; position: relative;}
+    .modal-content input, .modal-content select, .modal-content textarea { width: 100%; margin: 8px 0; padding: 10px; border: 1px solid #ccc; border-radius: 6px;}
+    .close { position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 20px;}
   </style>
 </head>
 <body>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="images">
-    <div class="swiper hero-swiper">
+<div class="container">
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-images">
+      <div class="swiper main-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="assets/1.png" alt=""></div>
+          <div class="swiper-slide"><img src="assets/2.png" alt=""></div>
+          <div class="swiper-slide"><img src="assets/3.png" alt=""></div>
+          <div class="swiper-slide"><img src="assets/4.png" alt=""></div>
+          <div class="swiper-slide"><img src="assets/5.png" alt=""></div>
+          <div class="swiper-slide"><img src="assets/6.png" alt=""></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="swiper thumbnail-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="assets/1.png" alt=""></div>
+          <div class="swiper-slide"><img src="assets/2.png" alt=""></div>
+          <div class="swiper-slide"><img src="assets/3.png" alt=""></div>
+          <div class="swiper-slide"><img src="assets/4.png" alt=""></div>
+          <div class="swiper-slide"><img src="assets/5.png" alt=""></div>
+          <div class="swiper-slide"><img src="assets/6.png" alt=""></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-text">
+      <h1>Cặp lồng giữ nhiệt Kela Đức 1,2L</h1>
+      <div><span class="price">350.000đ</span><span class="old-price">870.000đ</span></div>
+      <p>SALE 60% hôm nay – Số lượng có hạn | Freeship toàn quốc | Đổi trả 3 ngày | Hàng chính hãng</p>
+      <button class="cta" id="openForm">MUA NGAY – Giảm 60%</button>
+      <div class="countdown" id="countdown"></div>
+    </div>
+  </div>
+
+  <!-- Description Section -->
+  <div class="section">
+    <h2>🔥 Giữ nhiệt vượt trội cả ngày</h2>
+    <p>Nhờ công nghệ chân không 2 lớp, cặp lồng Kela giúp cơm canh luôn nóng hổi đến trưa, đồng thời giữ lạnh hiệu quả nhiều giờ.</p>
+    <img src="assets/1.png" alt="">
+  </div>
+
+  <!-- Video Section -->
+  <div class="section">
+    <h2>🎥 Video thực tế từ khách hàng</h2>
+    <div class="swiper video-swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="assets/1.png" width="100%"></div>
-        <div class="swiper-slide"><img src="assets/2.png" width="100%"></div>
-        <div class="swiper-slide"><img src="assets/3.png" width="100%"></div>
-        <div class="swiper-slide"><img src="assets/4.png" width="100%"></div>
-        <div class="swiper-slide"><img src="assets/5.png" width="100%"></div>
-        <div class="swiper-slide"><img src="assets/6.png" width="100%"></div>
+        <div class="swiper-slide"><video src="assets/v4.mp4" muted loop></video></div>
+        <div class="swiper-slide"><video src="assets/v3.mp4" muted loop></video></div>
+        <div class="swiper-slide"><video src="assets/v2.mp4" muted loop></video></div>
+        <div class="swiper-slide"><video src="assets/v1.mp4" muted loop></video></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
   </div>
-  <div class="content">
-    <h1>Cặp lồng giữ nhiệt Kela Đức 1,2L</h1>
-    <div><span class="price">350.000đ</span><span class="old-price">870.000đ</span></div>
-    <p>SALE 60% hôm nay – Số lượng có hạn | Freeship toàn quốc | Đổi trả 3 ngày | Hàng chính hãng</p>
-    <button class="cta">MUA NGAY – Giảm 60%</button>
-    <p>Ưu đãi kết thúc sau: <span id="countdown">29:58</span></p>
-  </div>
-</section>
 
-<!-- Description Section -->
-<section class="section description">
-  <h2>🔥 Giữ nhiệt vượt trội cả ngày</h2>
-  <p>Nhờ công nghệ chân không 2 lớp, cặp lồng Kela giúp cơm canh luôn nóng hổi đến trưa,
-  đồng thời giữ lạnh hiệu quả nhiều giờ, mang đến trải nghiệm tiện lợi cho cả gia đình.</p>
-  <img src="assets/1.png" width="60%" style="border-radius:12px;"/>
-</section>
-
-<!-- Video Section -->
-<section class="section video">
-  <h2>🎥 Video thực tế từ người dùng</h2>
-  <div class="swiper video-swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><video src="assets/v4.mp4" controls width="100%"></video></div>
-      <div class="swiper-slide"><video src="assets/v3.mp4" controls width="100%"></video></div>
-      <div class="swiper-slide"><video src="assets/v2.mp4" controls width="100%"></video></div>
-      <div class="swiper-slide"><video src="assets/v1.mp4" controls width="100%"></video></div>
+  <!-- Review Section -->
+  <div class="section reviews">
+    <h2>✨ Trải nghiệm thực tế từ khách hàng</h2>
+    <div class="swiper review-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide review-card"><strong>Nguyễn Thảo</strong><br>⭐⭐⭐⭐⭐<br>Cơm mang từ sáng đến trưa vẫn nóng hổi.</div>
+        <div class="swiper-slide review-card"><strong>Thu Hà</strong><br>⭐⭐⭐⭐⭐<br>Inox 304 an toàn, yên tâm.</div>
+        <div class="swiper-slide review-card"><strong>Minh Khoa</strong><br>⭐⭐⭐⭐⭐<br>Sản phẩm chắc chắn, giữ nhiệt cực tốt.</div>
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
-    <div class="swiper-pagination"></div>
   </div>
-</section>
 
-<!-- Review Section -->
-<section class="section review">
-  <h2>✨ Trải nghiệm thực tế từ khách hàng</h2>
-  <div class="swiper review-swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><p>Nguyễn Thảo: Cơm mang từ sáng đến trưa vẫn nóng hổi. Thiết kế gọn gàng.</p></div>
-      <div class="swiper-slide"><p>Thu Hà: Hộp giúp giữ nóng cả buổi, bé ăn ngon hơn. Inox 304 an toàn.</p></div>
-      <div class="swiper-slide"><p>Minh Khoa: Sản phẩm chắc chắn, giữ nhiệt cực tốt. Giao hàng nhanh.</p></div>
+  <!-- FAQ Section -->
+  <div class="section faq">
+    <h2>❓ Câu hỏi thường gặp</h2>
+    <div class="faq-item">
+      <div class="faq-question">Hộp giữ nóng được bao lâu?</div>
+      <div class="faq-answer">Cặp lồng Kela giữ nóng 4–6 giờ và giữ lạnh 6–8 giờ.</div>
     </div>
-    <div class="swiper-pagination"></div>
+    <div class="faq-item">
+      <div class="faq-question">Có bị tràn khi để trong balo?</div>
+      <div class="faq-answer">Không, nắp khóa kín và ron chống tràn giúp an tâm di chuyển.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Có kèm thìa không?</div>
+      <div class="faq-answer">Có, sản phẩm tặng kèm thìa inox gấp gọn.</div>
+    </div>
   </div>
-</section>
-
-<!-- FAQ Section -->
-<section class="section faq">
-  <h2>❓ Câu hỏi thường gặp</h2>
-  <p><b>Hộp giữ nóng được bao lâu?</b> 4–6 giờ và giữ lạnh 6–8 giờ.</p>
-  <p><b>Có bị tràn khi để trong balo?</b> Không. Nắp khóa kín và ron chống tràn.</p>
-  <p><b>Có kèm thìa không?</b> Có, sản phẩm tặng kèm thìa inox gấp gọn.</p>
-</section>
-
-<!-- Form Section -->
-<section class="section form">
-  <h2>📦 Đặt hàng ngay</h2>
-  <form id="orderForm">
-    <input type="text" name="name" placeholder="Họ tên" required><br><br>
-    <input type="tel" name="phone" placeholder="Số điện thoại" required><br><br>
-    <input type="text" name="address" placeholder="Địa chỉ" required><br><br>
-    <button type="submit" class="cta">Xác nhận đặt hàng</button>
-  </form>
-  <p id="formMsg"></p>
-</section>
+</div>
 
 <!-- Footer -->
 <footer>
-  Freeship toàn quốc | Đổi trả trong 3 ngày | Hỗ trợ khách hàng 24/7<br>
-  Công ty ABC - Địa chỉ: Hà Nội<br>
-  Hotline: 0123 456 789 - Email: support@example.com
+  🚚 Freeship toàn quốc | 🔄 Đổi trả trong 3 ngày | 🛡️ Hàng chính hãng | ☎️ Hỗ trợ 24/7
+  <br>Công ty ABC – Địa chỉ: Hà Nội | Hotline: 0123 456 789 | Email: support@example.com
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- Sticky CTA Mobile -->
+<div class="sticky-cta">
+  <button id="openFormMobile">MUA NGAY – Giảm 60%</button>
+</div>
+
+<!-- Modal Form -->
+<div class="modal" id="orderModal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h3>Thông tin đặt hàng</h3>
+    <select><option>-- Chọn màu --</option><option>Hồng</option><option>Bạc</option></select>
+    <select><option>-- Chọn combo --</option><option>1 hộp</option><option>2 hộp</option></select>
+    <input type="text" placeholder="Họ tên *">
+    <input type="text" placeholder="Số điện thoại *">
+    <input type="text" placeholder="Địa chỉ *">
+    <textarea placeholder="Ghi chú"></textarea>
+    <button class="cta">Xác nhận đặt hàng</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script>
-  var heroSwiper = new Swiper('.hero-swiper', {
-    pagination: { el: '.hero-swiper .swiper-pagination', clickable: true },
+  const thumbs = new Swiper('.thumbnail-swiper', { slidesPerView: 4, spaceBetween: 10, watchSlidesProgress: true,});
+  const mainSwiper = new Swiper('.main-swiper', {
+    spaceBetween: 10,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    thumbs: { swiper: thumbs }
   });
-  var videoSwiper = new Swiper('.video-swiper', {
+  const videoSwiper = new Swiper('.video-swiper', {
     pagination: { el: '.video-swiper .swiper-pagination', clickable: true },
+    slidesPerView: 1,
+    on: {
+      slideChange: function(){
+        document.querySelectorAll('.video-swiper video').forEach(v=>v.pause());
+        let activeVideo = this.slides[this.activeIndex].querySelector('video');
+        if(activeVideo) { activeVideo.play(); }
+      }
+    }
   });
-  var reviewSwiper = new Swiper('.review-swiper', {
+  const reviewSwiper = new Swiper('.review-swiper', {
     pagination: { el: '.review-swiper .swiper-pagination', clickable: true },
+    slidesPerView: 3,
+    spaceBetween: 20,
+    breakpoints: { 0: {slidesPerView: 1.1}, 768: {slidesPerView: 3}}
   });
-  document.getElementById('orderForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    document.getElementById('formMsg').textContent = "Cảm ơn bạn đã đặt hàng!";
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      let ans = q.nextElementSibling;
+      ans.style.display = ans.style.display === 'block' ? 'none' : 'block';
+    });
   });
+  // Countdown 30 phút
+  let countdownEl = document.getElementById('countdown');
+  let end = localStorage.getItem('countdownEnd');
+  if(!end){ end = Date.now() + 30*60*1000; localStorage.setItem('countdownEnd', end); }
+  function updateCountdown(){
+    let diff = end - Date.now();
+    if(diff<=0){ countdownEl.textContent = "Hết hạn!"; return; }
+    let m = Math.floor(diff/60000), s=Math.floor((diff%60000)/1000);
+    countdownEl.textContent = `Ưu đãi kết thúc sau: ${m}:${s<10?'0'+s:s}`;
+  }
+  setInterval(updateCountdown,1000);
+  updateCountdown();
+  // Modal
+  const modal=document.getElementById('orderModal');
+  document.getElementById('openForm').onclick=()=>modal.style.display='flex';
+  document.getElementById('openFormMobile').onclick=()=>modal.style.display='flex';
+  document.getElementById('closeModal').onclick=()=>modal.style.display='none';
 </script>
 </body>
 </html>
