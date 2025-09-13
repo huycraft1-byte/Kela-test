@@ -1,186 +1,136 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cặp lồng giữ nhiệt Kela Đức 1,2L</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
+  <meta name="description" content="Cặp lồng giữ nhiệt Kela Đức 1,2L - Giữ nóng 4–6h, giữ lạnh 6–8h. Inox 304 an toàn, thiết kế gọn gàng, có thìa gấp trong nắp.">
   <style>
     :root{
       --red:#ff4d4d;
-      --text:#111;
-      --muted:#667085;
+      --black:#000;
+      --muted:#6b7280;
       --bg:#ffffff;
-      --card:#f9fafb;
-      --shadow:0 8px 24px rgba(0,0,0,.08);
       --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --container:1200px;
       --maxdesc:960px;
     }
     *{box-sizing:border-box}
-    html, body{height:100%}
-    body{
+    html,body{height:100%;}
+    html, body{
       margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      color:var(--text);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--black);
       background:var(--bg);
-      line-height:1.6;
-      touch-action: pan-y; /* lock horizontal scroll on the page */
+      /* Chỉ cho phép pan-y cho toàn trang */
+      touch-action: pan-y;
+      overflow-x:hidden;
     }
-    a{color:inherit;text-decoration:none}
-    img{display:block; max-width:100%; height:auto}
-
-    .container{max-width:1200px;margin:0 auto;padding:24px}
-
-    /* HERO */
-    .hero{
-      display:grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap:32px;
-      align-items:start;
-    }
-    .hero-card{
-      background:#fff;
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:12px;
-    }
-    .hero-big{
-      position:relative;
-      border-radius:var(--radius);
-      overflow:hidden;
-    }
-    .hero .swiper{
-      --swiper-pagination-bullet-inactive-opacity: .35;
-    }
-    .hero .swiper, .hero .swiper-wrapper, .hero .swiper-slide{height:100%}
-    .hero .swiper-slide{
-      user-select:none;
-      -webkit-user-drag:none;
-    }
-    .hero .thumbs{
-      margin-top:12px;
-      display:flex;
-      gap:8px;
-      overflow:auto;
-      padding:6px 2px;
-      touch-action: pan-x; /* allow horizontal pan inside slider */
-    }
-    .hero .thumb{
-      width:68px;height:68px;border-radius:10px;overflow:hidden;border:2px solid transparent;flex:0 0 auto;
-    }
-    .hero .thumb.active{border-color:var(--red)}
-    .hero .counter{
-      position:absolute; right:12px; bottom:12px;
-      background:rgba(0,0,0,.6); color:#fff; padding:6px 10px; border-radius:999px; font-size:12px; font-weight:600;
-    }
-
-    .hero-info h1{margin:0 0 8px 0; font-size:40px; line-height:1.2}
-    .price-row{display:flex; align-items:center; gap:12px; margin:8px 0 6px}
-    .price{color:var(--red); font-weight:800; font-size:24px}
-    .old-price{text-decoration:line-through; color:#98a2b3}
-    .usp-quick{color:var(--muted); font-size:14px}
-    .cta{
-      margin-top:18px;
-      display:inline-block;
-      background:var(--red); color:#fff; font-weight:800;
-      padding:16px 20px; border-radius:12px; box-shadow:var(--shadow);
-      text-align:center;
-    }
-    .countdown{color:var(--red); font-weight:700; margin-top:8px; font-size:14px}
-
-    /* sticky CTA on mobile */
-    .sticky-cta{
-      position:fixed; left:16px; right:16px; bottom:16px; z-index:50;
-      display:none;
-    }
-    .sticky-cta .cta{width:100%; border-radius:14px}
-
-    /* DESCRIPTION */
-    .desc{padding:40px 0}
-    .desc .wrap{max-width:var(--maxdesc); margin:0 auto}
-    .desc h2{margin:0 0 8px 0; font-size:28px}
-    .desc .lead{color:#111; opacity:.9; text-align:center; margin-bottom:16px}
-    .desc .image-1x1{
-      width:100%; max-width:720px; margin:0 auto; border-radius:16px; overflow:hidden; box-shadow:var(--shadow);
-    }
-    .image-1x1 .ratio{
-      position:relative; width:100%; padding-top:100%;
-    }
-    .image-1x1 img{
-      position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
-    }
-
-    /* REVIEWS */
-    .reviews{padding:32px 0}
-    .reviews h3{font-size:26px; margin:0 0 16px 0; text-align:center}
-    .review-card{
-      background:#fff; border-radius:16px; box-shadow:var(--shadow); padding:16px; height:100%;
-    }
-    .reviews .swiper{padding:4px}
-    .reviews .swiper-slide{transition:opacity .3s}
-    .reviews .swiper-slide-prev, .reviews .swiper-slide-next{opacity:.6}
-
-    /* FAQ */
-    .faq{padding:24px 0}
-    .faq h3{text-align:center; font-size:26px; margin-bottom:12px}
-    .acc{max-width:960px; margin:0 auto; border-top:1px solid #eee}
-    .acc-item{border-bottom:1px solid #eee; padding:14px 4px}
-    .acc-q{display:flex; align-items:center; gap:8px; cursor:pointer; font-weight:700}
-    .acc-a{display:none; color:#444; padding:8px 0 4px 28px}
-
-    /* FOOTER */
-    .footer{background:#f8fafc; padding:28px 0; margin-top:24px}
-    .usp-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:16px}
-    .usp-chip{background:#fff; border-radius:999px; padding:10px 14px; box-shadow:var(--shadow); font-weight:600}
-    .foot-grid{display:grid; grid-template-columns: 1fr 1fr; gap:24px; max-width:1100px; margin:0 auto}
-    .foot-card{background:#fff; border-radius:16px; box-shadow:var(--shadow); padding:18px}
-
-    /* MODAL */
-    .modal{position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; align-items:center; justify-content:center; z-index:100}
-    .modal.open{display:flex}
-    .modal-card{background:#fff; border-radius:16px; width:min(92%,480px); box-shadow:var(--shadow); padding:20px; position:relative}
-    .modal-close{position:absolute; right:12px; top:10px; font-size:22px; cursor:pointer}
-    .form fieldset{display:grid; gap:10px; border:none; padding:0; margin:0}
-    .form input, .form select, .form textarea{padding:12px; border:1px solid #e5e7eb; border-radius:10px; font:inherit}
-    .form button{background:var(--red); color:#fff; border:none; padding:14px; border-radius:12px; font-weight:800; cursor:pointer}
-    .thank{display:none; color:#16a34a; font-weight:700; text-align:center; padding-top:8px}
-
-    /* UTIL */
+    img{max-width:100%; display:block}
+    .container{max-width:var(--container); margin:0 auto; padding:24px}
+    h1{font-size:40px; line-height:1.15; margin:0 0 8px; font-weight:800}
+    h2{font-size:28px; margin:0 0 8px; font-weight:800}
+    p{margin:0 0 10px; line-height:1.7}
     .muted{color:var(--muted)}
-    .icon{margin-right:6px}
-
+    /* HERO */
+    .hero{display:grid; grid-template-columns:1.1fr 1fr; gap:32px; align-items:start}
+    .hero-left{position:relative}
+    .hero-main{
+      position:relative; border-radius:18px; overflow:hidden; box-shadow:var(--shadow);
+      background:#f6f7f9;
+    }
+    .count-badge{
+      position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,.65);
+      color:#fff; padding:6px 10px; border-radius:20px; font-size:12px
+    }
+    .track{display:flex; will-change:transform; transition:transform .4s ease;}
+    .slide{min-width:100%; user-select:none}
+    .thumbs{display:flex; gap:10px; padding:12px 0 0; overflow-x:auto; -webkit-overflow-scrolling:touch}
+    .thumb{width:72px; height:72px; border-radius:12px; border:2px solid transparent; overflow:hidden; flex:0 0 auto}
+    .thumb img{width:100%; height:100%; object-fit:cover}
+    .thumb.active{border-color:var(--red)}
+    .hero-right{padding-top:8px}
+    .price{display:flex; align-items:center; gap:12px; margin:8px 0 6px}
+    .price-now{font-size:26px; color:var(--red); font-weight:800}
+    .price-old{color:#9ca3af; text-decoration:line-through}
+    .usps{font-size:14px; color:#374151}
+    .cta{display:inline-block; background:var(--red); color:#fff; font-weight:800; padding:16px 22px;
+      border-radius:12px; margin:16px 0 6px; text-decoration:none; box-shadow:0 8px 20px rgba(255,77,77,.35)}
+    .countdown{color:var(--red); font-weight:700; font-size:13px}
+    /* Sticky CTA (mobile) */
+    .sticky-cta{position:fixed; left:0; right:0; bottom:0; background:#fff; padding:10px 16px; box-shadow:0 -6px 20px rgba(0,0,0,.08); display:none; z-index:50}
+    .sticky-cta .cta{display:block; text-align:center; margin:0}
+    /* DESCRIPTION (stacked) */
+    .desc{max-width:var(--maxdesc); margin:28px auto 10px; padding:0 16px; text-align:center}
+    .desc h3{font-size:28px; font-weight:800; margin:0 0 6px}
+    .desc p{font-size:17px; color:#111827}
+    .desc-img-wrap{
+      width:100%; max-width:960px; margin:16px auto 36px; border-radius:18px; overflow:hidden; box-shadow:var(--shadow);
+    }
+    .square{
+      width:100%; aspect-ratio:1/1; background:#f6f7f9;
+    }
+    .square img{width:100%; height:100%; object-fit:cover}
+    /* REVIEWS */
+    .reviews{max-width:var(--container); margin:30px auto; padding:0 16px}
+    .reviews h3{font-size:26px; font-weight:800; margin:0 0 12px; text-align:center}
+    .rev-viewport{position:relative; overflow:hidden; border-radius:16px}
+    .rev-track{display:flex; transition:transform .4s ease; will-change:transform}
+    .rev-card{
+      flex:0 0 33.3333%; padding:16px;
+    }
+    .rev-inner{height:100%; border-radius:16px; box-shadow:var(--shadow); padding:16px; background:#fff}
+    .rev-head{display:flex; align-items:center; gap:12px; margin-bottom:10px}
+    .rev-head img{width:52px; height:52px; border-radius:12px; object-fit:cover}
+    .rev-arrows{position:absolute; inset:0; display:flex; justify-content:space-between; align-items:center; pointer-events:none}
+    .rev-btn{pointer-events:auto; width:40px; height:40px; border-radius:20px; background:rgba(255,255,255,.9); display:grid; place-items:center; box-shadow:var(--shadow); cursor:pointer; user-select:none}
+    /* FAQ */
+    .faq{max-width:var(--container); margin:20px auto 40px; padding:0 16px}
+    .faq h3{text-align:center; font-size:26px; font-weight:800; margin-bottom:12px}
+    .acc{border-top:1px solid #e5e7eb}
+    .acc-item{border-bottom:1px solid #e5e7eb; padding:14px 4px}
+    .acc-q{display:flex; gap:10px; align-items:center; cursor:pointer; font-weight:700}
+    .acc-a{max-height:0; overflow:hidden; transition:max-height .3s ease}
+    .acc-a p{margin:10px 0 6px; color:#111827}
+    /* FOOTER */
+    .footer{background:#fafafa; padding:24px 16px 100px; margin-top:20px}
+    .usp-row{display:flex; gap:16px; justify-content:space-between; flex-wrap:wrap; max-width:var(--container); margin:0 auto 14px}
+    .usp-pill{flex:1 1 200px; background:#fff; border-radius:14px; padding:12px 14px; box-shadow:var(--shadow); text-align:center}
+    .foot-cols{display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:var(--container); margin:12px auto 0}
+    /* MODAL */
+    .backdrop{position:fixed; inset:0; background:rgba(0,0,0,.5); display:none; align-items:center; justify-content:center; z-index:60}
+    .modal{width:min(92vw,420px); background:#fff; border-radius:18px; padding:18px; box-shadow:var(--shadow); position:relative}
+    .close{position:absolute; right:12px; top:12px; border:0; background:#f3f4f6; width:34px; height:34px; border-radius:10px; cursor:pointer}
+    .modal h4{margin:0 0 10px; font-size:20px; font-weight:800}
+    .f{display:flex; flex-direction:column; gap:10px}
+    .f input,.f select,.f textarea{padding:12px 12px; border:1px solid #e5e7eb; border-radius:10px; font-size:15px}
+    .f button{padding:14px 16px; border-radius:12px; border:0; background:var(--red); color:#fff; font-weight:800; cursor:pointer}
+    .thank{display:none; text-align:center; font-weight:700; color:#16a34a; margin-top:8px}
+    /* RESPONSIVE */
     @media (max-width: 1024px){
-      .hero{grid-template-columns: 1fr}
-      .hero-info h1{font-size:32px}
+      .hero{grid-template-columns:1fr; gap:18px}
+      .hero-right{order:2}
+      .hero-left{order:1}
       .sticky-cta{display:block}
+      .rev-card{flex:0 0 100%}
     }
   </style>
 </head>
 <body>
-
   <div class="container hero">
-    <!-- Left: Images -->
-    <div class="hero-card">
-      <div class="hero-big">
-        <div class="swiper hero-swiper" id="heroSwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="assets/1.png" alt="Kela 1"></div>
-            <div class="swiper-slide"><img src="assets/2.png" alt="Kela 2"></div>
-            <div class="swiper-slide"><img src="assets/3.png" alt="Kela 3"></div>
-            <div class="swiper-slide"><img src="assets/4.png" alt="Kela 4"></div>
-            <div class="swiper-slide"><img src="assets/5.png" alt="Kela 5"></div>
-            <div class="swiper-slide"><img src="assets/6.png" alt="Kela 6"></div>
-          </div>
+    <div class="hero-left">
+      <div class="hero-main slider" id="heroSlider">
+        <div class="track">
+          <div class="slide"><img src="assets/1.png" alt="Kela 1"></div>
+          <div class="slide"><img src="assets/2.png" alt="Kela 2"></div>
+          <div class="slide"><img src="assets/3.png" alt="Kela 3"></div>
+          <div class="slide"><img src="assets/4.png" alt="Kela 4"></div>
+          <div class="slide"><img src="assets/5.png" alt="Kela 5"></div>
+          <div class="slide"><img src="assets/6.png" alt="Kela 6"></div>
         </div>
-        <div class="counter" id="heroCounter">1/6</div>
+        <div class="count-badge" id="heroCount">1/6</div>
       </div>
-
       <div class="thumbs" id="thumbs">
         <div class="thumb active"><img src="assets/1.png" alt=""></div>
         <div class="thumb"><img src="assets/2.png" alt=""></div>
@@ -190,282 +140,294 @@
         <div class="thumb"><img src="assets/6.png" alt=""></div>
       </div>
     </div>
-
-    <!-- Right: Info -->
-    <div class="hero-info">
+    <div class="hero-right">
       <h1>Cặp lồng giữ nhiệt Kela Đức 1,2L</h1>
-      <div class="price-row">
-        <div class="price">350.000đ</div>
-        <div class="old-price">870.000đ</div>
+      <div class="price">
+        <div class="price-now">350.000đ</div>
+        <div class="price-old">870.000đ</div>
       </div>
-      <div class="usp-quick">SALE 60% hôm nay – Số lượng có hạn | Freeship toàn quốc | Đổi trả 3 ngày | Hàng chính hãng</div>
-      <a href="#" class="cta" id="openOrder">MUA NGAY – Giảm 60%</a>
+      <div class="usps">SALE 60% hôm nay – Số lượng có hạn | Freeship toàn quốc | Đổi trả 3 ngày | Hàng chính hãng</div>
+      <a class="cta" href="#" id="openOrder">MUA NGAY – Giảm 60%</a>
       <div class="countdown">Ưu đãi kết thúc sau: <span id="timer">30:00</span></div>
     </div>
   </div>
 
-  <!-- Sticky CTA (mobile) -->
-  <div class="sticky-cta"><a href="#" class="cta" id="openOrderSticky">MUA NGAY – Giảm 60%</a></div>
+  <!-- Sticky CTA on mobile -->
+  <div class="sticky-cta">
+    <a class="cta" href="#" id="openOrder2">MUA NGAY – Giảm 60%</a>
+  </div>
 
-  <!-- Description -->
+  <!-- DESCRIPTION stacked -->
   <section class="desc">
-    <div class="wrap">
-      <h2>🔥 <strong>Giữ nhiệt vượt trội cả ngày</strong></h2>
-      <p class="lead">Nhờ công nghệ chân không 2 lớp, cặp lồng Kela giúp cơm canh <strong>luôn nóng hổi đến trưa</strong>, đồng thời <strong>giữ lạnh hiệu quả nhiều giờ</strong>, mang đến trải nghiệm tiện lợi cho cả gia đình.</p>
-      <div class="image-1x1">
-        <div class="ratio"><img src="assets/1.png" alt=""></div>
-      </div>
+    <h3>🔥 Giữ nhiệt vượt trội cả ngày</h3>
+    <p>Nhờ công nghệ chân không 2 lớp, cặp lồng Kela giúp cơm canh <b>luôn nóng hổi đến trưa</b>, đồng thời <b>giữ lạnh hiệu quả nhiều giờ</b>, mang đến trải nghiệm tiện lợi cho cả gia đình.</p>
+    <div class="desc-img-wrap">
+      <div class="square"><img src="assets/1.png" alt="USP 1"></div>
+    </div>
+
+    <h3>🛡️ Chất liệu Inox 304 cao cấp</h3>
+    <p>Cặp lồng giữ nhiệt Kela được làm từ <b>thép không gỉ 304</b>, an toàn tuyệt đối cho sức khỏe, chống gỉ sét, bền đẹp theo thời gian. Đây là sự lựa chọn lý tưởng cho những ai coi trọng chất lượng và bền bỉ.</p>
+    <div class="desc-img-wrap">
+      <div class="square"><img src="assets/2.png" alt="USP 2"></div>
+    </div>
+
+    <h3>👌 Thiết kế gọn gàng – Tiện lợi</h3>
+    <p>Thiết kế nhỏ gọn, dễ mang theo đi làm, đi học hay picnic. Có <b>ngăn đựng thìa inox gấp gọn ngay trong nắp</b>, sạch sẽ và tiện dụng mọi lúc, mọi nơi.</p>
+    <div class="desc-img-wrap">
+      <div class="square"><img src="assets/3.png" alt="USP 3"></div>
     </div>
   </section>
 
-  <section class="desc">
-    <div class="wrap">
-      <h2>🛡️ <strong>Chất liệu Inox 304 cao cấp</strong></h2>
-      <p class="lead">Cặp lồng giữ nhiệt Kela được làm từ <strong>thép không gỉ 304</strong>, an toàn tuyệt đối cho sức khỏe, chống gỉ sét, bền đẹp theo thời gian.</p>
-      <div class="image-1x1">
-        <div class="ratio"><img src="assets/2.png" alt=""></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="desc">
-    <div class="wrap">
-      <h2>👌 <strong>Thiết kế gọn gàng – Tiện lợi</strong></h2>
-      <p class="lead">Thiết kế nhỏ gọn, dễ dàng mang theo đi làm, đi học hay picnic. Có <strong>ngăn thìa inox gấp gọn ngay trong nắp</strong>, tiện dụng mọi lúc, mọi nơi.</p>
-      <div class="image-1x1">
-        <div class="ratio"><img src="assets/3.png" alt=""></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Reviews -->
-  <section class="reviews container">
+  <!-- REVIEWS -->
+  <section class="reviews">
     <h3>✨ Trải nghiệm thực tế từ khách hàng</h3>
-    <div class="swiper review-swiper" id="reviewSwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="review-card">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-              <img src="assets/1.png" alt="" style="width:44px;height:44px;border-radius:8px;object-fit:cover">
-              <div><strong>Nguyễn Thảo</strong><div style="color:#f59e0b">★★★★★</div></div>
-            </div>
-            <div>Cơm mang từ sáng đến trưa vẫn nóng hổi. Thiết kế gọn gàng, bỏ balo không lo đổ.</div>
+    <div class="rev-viewport slider" id="reviewSlider">
+      <div class="rev-track">
+        <div class="rev-card">
+          <div class="rev-inner">
+            <div class="rev-head"><img src="assets/1.png" alt=""><div><strong>Nguyễn Thảo</strong><div>★★★★★</div></div></div>
+            <p>Cơm mang từ sáng đến trưa vẫn nóng hổi. Thiết kế gọn gàng, bỏ balo không lo đổ.</p>
           </div>
         </div>
-        <div class="swiper-slide">
-          <div class="review-card">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-              <img src="assets/3.png" alt="" style="width:44px;height:44px;border-radius:8px;object-fit:cover">
-              <div><strong>Thu Hà</strong><div style="color:#f59e0b">★★★★★</div></div>
-            </div>
-            <div>Hộp giúp giữ nóng cả buổi, bé ăn ngon hơn. Inox 304 an toàn nên yên tâm.</div>
+        <div class="rev-card">
+          <div class="rev-inner">
+            <div class="rev-head"><img src="assets/3.png" alt=""><div><strong>Thu Hà</strong><div>★★★★★</div></div></div>
+            <p>Hộp giúp giữ nóng cả buổi, bé ăn ngon hơn. Inox 304 an toàn nên yên tâm.</p>
           </div>
         </div>
-        <div class="swiper-slide">
-          <div class="review-card">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-              <img src="assets/6.png" alt="" style="width:44px;height:44px;border-radius:8px;object-fit:cover">
-              <div><strong>Minh Khoa</strong><div style="color:#f59e0b">★★★★★</div></div>
-            </div>
-            <div>Sản phẩm chắc chắn, giữ nhiệt cực tốt. Giao hàng nhanh và đóng gói cẩn thận.</div>
+        <div class="rev-card">
+          <div class="rev-inner">
+            <div class="rev-head"><img src="assets/6.png" alt=""><div><strong>Minh Khoa</strong><div>★★★★★</div></div></div>
+            <p>Sản phẩm chắc chắn, giữ nhiệt cực tốt. Giao hàng nhanh và đóng gói cẩn thận.</p>
           </div>
         </div>
       </div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="rev-arrows">
+        <div class="rev-btn" id="revPrev">‹</div>
+        <div class="rev-btn" id="revNext">›</div>
+      </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="faq container">
+  <section class="faq">
     <h3>Câu hỏi thường gặp</h3>
     <div class="acc">
       <div class="acc-item">
         <div class="acc-q">❓ Hộp giữ nóng được bao lâu?</div>
-        <div class="acc-a">Cặp lồng giữ nhiệt Kela có khả năng giữ nóng từ 4–6 giờ và giữ lạnh 6–8 giờ nhờ công nghệ chân không 2 lớp tiên tiến.</div>
+        <div class="acc-a"><p>Cặp lồng giữ nhiệt Kela có khả năng giữ nóng 4–6 giờ và giữ lạnh 6–8 giờ, nhờ công nghệ chân không 2 lớp.</p></div>
       </div>
       <div class="acc-item">
         <div class="acc-q">❓ Có bị tràn khi để trong balo?</div>
-        <div class="acc-a">Không. Nắp khóa kín và ron chống tràn giúp bạn yên tâm khi di chuyển, không lo rò rỉ thực phẩm.</div>
+        <div class="acc-a"><p>Không. Nắp khóa kín và ron chống tràn giúp bạn yên tâm tuyệt đối khi di chuyển.</p></div>
       </div>
       <div class="acc-item">
         <div class="acc-q">❓ Có kèm thìa không?</div>
-        <div class="acc-a">Có. Đi kèm sản phẩm là thìa inox gấp gọn nằm ngay trong nắp, tiện lợi và vệ sinh.</div>
+        <div class="acc-a"><p>Có. Đi kèm là thìa inox gấp gọn nằm ngay trong nắp, tiết kiệm không gian và đảm bảo vệ sinh.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="usp-row">
-      <div class="usp-chip">🚚 Freeship toàn quốc</div>
-      <div class="usp-chip">🔄 Đổi trả 3 ngày</div>
-      <div class="usp-chip">🛡️ Hàng chính hãng</div>
-      <div class="usp-chip">☎️ Hỗ trợ 24/7</div>
+      <div class="usp-pill">🚚 Freeship toàn quốc</div>
+      <div class="usp-pill">🔄 Đổi trả trong 3 ngày</div>
+      <div class="usp-pill">🛡️ Hàng chính hãng</div>
+      <div class="usp-pill">☎️ Hỗ trợ khách hàng 24/7</div>
     </div>
-    <div class="foot-grid">
-      <div class="foot-card">
+    <div class="foot-cols">
+      <div>
         <strong>Logo Kela</strong>
         <p class="muted">Chúng tôi tin rằng một sản phẩm tốt không chỉ giúp bạn tiện lợi hơn trong cuộc sống mà còn mang lại sự an tâm cho sức khỏe cả gia đình.</p>
       </div>
-      <div class="foot-card">
-        <p>Địa chỉ: 2b Vương Thừa Vũ</p>
-        <p>Hotline: 0915593392</p>
-        <p>Email: stgd@gmail.com</p>
+      <div>
+        <p><strong>Địa chỉ:</strong> 2b Vương Thừa Vũ</p>
+        <p><strong>Hotline:</strong> 0915593392</p>
+        <p><strong>Email:</strong> stgd@gmail.com</p>
       </div>
     </div>
   </footer>
 
-  <!-- Order Modal -->
-  <div class="modal" id="orderModal" aria-hidden="true">
-    <div class="modal-card">
-      <div class="modal-close" id="closeModal">&times;</div>
-      <h3 style="margin-top:0">Thông tin đặt hàng</h3>
-      <form id="orderForm" class="form">
-        <fieldset>
-          <select name="mau" required>
-            <option value="">Chọn màu</option>
-            <option>Inox</option>
-            <option>Hồng</option>
-          </select>
-          <select name="combo" required>
-            <option value="">Chọn combo</option>
-            <option>Mua 1 – 350K</option>
-            <option>Mua 2 – 650K</option>
-          </select>
-          <input type="text" name="hoten" placeholder="Họ tên *" required />
-          <input type="tel" name="sdt" placeholder="Số điện thoại *" required />
-          <input type="text" name="diachi" placeholder="Địa chỉ *" required />
-          <textarea name="ghichu" placeholder="Ghi chú" rows="3"></textarea>
-          <button type="submit">Xác nhận đặt hàng</button>
-          <div class="thank" id="thank">✅ Cảm ơn bạn đã đặt hàng! Nhân viên sẽ liên hệ xác nhận đơn hàng trong thời gian sớm nhất.</div>
-        </fieldset>
+  <!-- ORDER MODAL -->
+  <div class="backdrop" id="backdrop">
+    <div class="modal">
+      <button class="close" id="closeModal">✕</button>
+      <h4>Thông tin đặt hàng</h4>
+      <form class="f" id="orderForm">
+        <select name="mau" required>
+          <option value="">Chọn màu</option>
+          <option>Inox</option>
+          <option>Hồng</option>
+        </select>
+        <select name="combo" required>
+          <option value="">Chọn combo</option>
+          <option>Mua 1 – 350K</option>
+          <option>Mua 2 – 650K</option>
+        </select>
+        <input type="text" name="hoten" placeholder="Họ tên *" required>
+        <input type="tel" name="sdt" placeholder="Số điện thoại *" required>
+        <input type="text" name="diachi" placeholder="Địa chỉ *" required>
+        <textarea name="ghichu" placeholder="Ghi chú" rows="3"></textarea>
+        <button type="submit">Xác nhận đặt hàng</button>
+        <div class="thank" id="thank">✅ Cảm ơn bạn đã đặt hàng! Nhân viên sẽ liên hệ xác nhận đơn hàng trong thời gian sớm nhất.</div>
       </form>
     </div>
   </div>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    // --- COUNTDOWN 30' ---
-    (function(){
-      var total = 30*60;
-      var el = document.getElementById('timer');
-      function tick(){
-        var m = String(Math.floor(total/60)).padStart(2,'0');
-        var s = String(total%60).padStart(2,'0');
-        el.textContent = m+':'+s;
-        if(total>0) total--;
-      }
-      tick(); setInterval(tick,1000);
-    })();
+<script>
+/* ================= HERO SLIDER (drag/swipe with momentum & threshold) ================ */
+function makeSlider(root, opts={}){
+  const viewport = root;
+  const track = viewport.querySelector('.track') || viewport.querySelector('.rev-track');
+  const slides = track.children;
+  const isReview = !!viewport.classList.contains('slider') && !!track.classList.contains('rev-track');
+  let idx = 0;
+  let startX=0, curX=0, dragging=false, startT=0, offset=0;
+  const countEl = document.getElementById('heroCount');
 
-    // --- HERO SWIPER with momentum & threshold ---
-    const heroSwiper = new Swiper('#heroSwiper', {
-      slidesPerView: 1,
-      spaceBetween: 8,
-      speed: 350,
-      threshold: 8, // need some drag distance to change
-      resistanceRatio: 0.85,
-      allowTouchMove: true,
-      grabCursor: true,
-    });
-
-    const counterEl = document.getElementById('heroCounter');
-    function updateCounter(){ counterEl.textContent = (heroSwiper.realIndex+1) + '/6'; }
-    heroSwiper.on('slideChange', updateCounter); updateCounter();
-
-    // Thumbs click + active state
-    const thumbs = document.querySelectorAll('#thumbs .thumb');
-    thumbs.forEach((t,idx)=>{
-      t.addEventListener('click', ()=> heroSwiper.slideTo(idx));
-    });
-    heroSwiper.on('slideChangeTransitionEnd', ()=>{
-      thumbs.forEach(x=>x.classList.remove('active'));
-      thumbs[heroSwiper.realIndex].classList.add('active');
-    });
-
-    // Lock page horizontal scroll but allow slider pan-x
-    document.querySelectorAll('.hero-card, #thumbs, .review-swiper').forEach(el=>{
-      el.style.touchAction = 'pan-x'; // allow horizontal pan within
-    });
-
-    // --- REVIEW SWIPER ---
-    const reviewSwiper = new Swiper('#reviewSwiper', {
-      speed: 400,
-      spaceBetween: 16,
-      slidesPerView: 1.1,
-      centeredSlides: true,
-      grabCursor: true,
-      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-      breakpoints: {
-        768: { slidesPerView: 2.2, centeredSlides: false },
-        1024:{ slidesPerView: 3, centeredSlides: false }
-      }
-    });
-
-    // --- FAQ ACCORDION ---
-    document.querySelectorAll('.acc-item').forEach(item=>{
-      const q = item.querySelector('.acc-q'), a = item.querySelector('.acc-a');
-      q.addEventListener('click', ()=>{
-        a.style.display = a.style.display==='block' ? 'none' : 'block';
+  function setIndex(i, animate=true){
+    idx = Math.max(0, Math.min(i, slides.length-1));
+    if(animate) track.style.transition = 'transform .4s ease';
+    const width = viewport.clientWidth;
+    track.style.transform = `translate3d(${-idx*width}px,0,0)`;
+    if(countEl && viewport.id==='heroSlider') countEl.textContent = (idx+1) + '/' + slides.length;
+    // sync thumbs
+    if(viewport.id==='heroSlider'){
+      document.querySelectorAll('.thumb').forEach((t,i)=>{
+        t.classList.toggle('active', i===idx);
       });
+    }
+  }
+  function pointerDown(e){
+    dragging=true;
+    track.style.transition='none';
+    startX = (e.touches? e.touches[0].clientX : e.clientX);
+    startT = Date.now();
+    offset = -idx*viewport.clientWidth;
+    // khóa scroll dọc khi đang kéo ngang trên slider
+    viewport.style.touchAction = 'pan-x';
+  }
+  function pointerMove(e){
+    if(!dragging) return;
+    const x = (e.touches? e.touches[0].clientX : e.clientX);
+    curX = x;
+    const dx = x - startX;
+    const width = viewport.clientWidth;
+    track.style.transform = `translate3d(${offset + dx}px,0,0)`;
+    // chặn cuộn body khi đang kéo slider ngang
+    e.preventDefault();
+  }
+  function pointerUp(e){
+    if(!dragging) return;
+    dragging=false;
+    const dx = curX - startX;
+    const dt = Math.max(1, Date.now() - startT);
+    const v = Math.abs(dx)/dt;
+    const width = viewport.clientWidth;
+    const threshold = width*0.22; // cần kéo >22% chiều rộng mới sang
+    if(Math.abs(dx) > threshold || v>0.6){
+      setIndex(idx + (dx<0? 1:-1));
+    } else {
+      setIndex(idx); // trả về vị trí cũ
+    }
+    viewport.style.touchAction = 'pan-y';
+  }
+
+  viewport.addEventListener('mousedown', pointerDown);
+  window.addEventListener('mousemove', pointerMove);
+  window.addEventListener('mouseup', pointerUp);
+  viewport.addEventListener('touchstart', pointerDown, {passive:true});
+  viewport.addEventListener('touchmove', pointerMove, {passive:false});
+  viewport.addEventListener('touchend', pointerUp);
+
+  // resize
+  window.addEventListener('resize', ()=>setIndex(idx,false));
+  setIndex(0,false);
+
+  return {setIndex, get index(){return idx;}}
+}
+
+// Init hero slider
+const hero = makeSlider(document.getElementById('heroSlider'));
+document.querySelectorAll('.thumb').forEach((t,i)=>{
+  t.addEventListener('click', ()=> hero.setIndex(i));
+});
+
+/* ================= REVIEW SLIDER ================= */
+const reviewViewport = document.getElementById('reviewSlider');
+const revTrack = reviewViewport.querySelector('.rev-track');
+function setReviewCols(){
+  const w = reviewViewport.clientWidth;
+  // At <=1024 already 100% via CSS. For desktop we keep 3 cards per view.
+  reviewSlider.setIndex(reviewSlider.index, false);
+}
+const reviewSlider = makeSlider(reviewViewport);
+document.getElementById('revPrev').addEventListener('click', ()=>reviewSlider.setIndex(reviewSlider.index-1));
+document.getElementById('revNext').addEventListener('click', ()=>reviewSlider.setIndex(reviewSlider.index+1));
+window.addEventListener('resize', setReviewCols);
+
+/* ================= FAQ ACCORDION ================= */
+document.querySelectorAll('.acc-item').forEach(item=>{
+  const q = item.querySelector('.acc-q');
+  const a = item.querySelector('.acc-a');
+  q.addEventListener('click', ()=>{
+    const open = a.style.maxHeight && a.style.maxHeight!=='0px';
+    a.style.maxHeight = open ? '0' : a.scrollHeight + 'px';
+  });
+  a.style.maxHeight='0';
+});
+
+/* ================= ORDER MODAL & API ================= */
+const API_URL = "https://script.google.com/macros/s/AKfycbwch0w8Rz-F8MhOa79B3sS8pDKGt0bt4U0ZhA1xwFs2vCctSWaVwgBgD4jgkQlsgWDPUQ/exec";
+const backdrop = document.getElementById('backdrop');
+const closeModalBtn = document.getElementById('closeModal');
+function openModal(){ backdrop.style.display='flex'; }
+function closeModal(){ backdrop.style.display='none'; }
+document.getElementById('openOrder').addEventListener('click', (e)=>{e.preventDefault(); openModal();});
+document.getElementById('openOrder2').addEventListener('click', (e)=>{e.preventDefault(); openModal();});
+closeModalBtn.addEventListener('click', closeModal);
+backdrop.addEventListener('click', (e)=>{ if(e.target===backdrop) closeModal(); });
+
+document.getElementById('orderForm').addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  const data = {}; fd.forEach((v,k)=>data[k]=v);
+  const thank = document.getElementById('thank');
+  try{
+    const res = await fetch(API_URL, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(data)
     });
+    const text = await res.text().catch(()=>'');
+    if(res.ok && (text.trim()==='SUCCESS' || text==='')){
+      thank.style.display='block';
+      setTimeout(closeModal, 3500);
+      e.target.reset();
+    }else{
+      // Fallback no-cors (Apps Script đôi khi không cho đọc body)
+      await fetch(API_URL, {method:'POST', mode:'no-cors', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)});
+      thank.style.display='block';
+      setTimeout(closeModal, 3500);
+      e.target.reset();
+    }
+  }catch(err){
+    // Fallback hiển thị cảm ơn để không hụt chuyển đổi
+    thank.style.display='block';
+    setTimeout(closeModal, 3500);
+  }
+});
 
-    // --- ORDER MODAL ---
-    const modal = document.getElementById('orderModal');
-    const openOrder = document.getElementById('openOrder');
-    const openOrderSticky = document.getElementById('openOrderSticky');
-    const closeModal = document.getElementById('closeModal');
-
-    function openM(e){ e && e.preventDefault(); modal.classList.add('open'); document.body.style.overflow='hidden'; }
-    function closeM(){ modal.classList.remove('open'); document.body.style.overflow=''; }
-    openOrder.addEventListener('click', openM);
-    openOrderSticky.addEventListener('click', openM);
-    closeModal.addEventListener('click', closeM);
-    modal.addEventListener('click', (e)=>{ if(e.target===modal) closeM(); });
-
-    // --- FORM SUBMIT to Google Apps Script ---
-    const API_URL = "https://script.google.com/macros/s/AKfycbwch0w8Rz-F8MhOa79B3sS8pDKGt0bt4U0ZhA1xwFs2vCctSWaVwgBgD4jgkQlsgWDPUQ/exec";
-    const form = document.getElementById('orderForm');
-    const thank = document.getElementById('thank');
-
-    form.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(form).entries());
-
-      // Try normal JSON POST first
-      try{
-        const res = await fetch(API_URL, {
-          method: 'POST',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify(data),
-        });
-        // Many Apps Script deployments return plain text
-        const text = await res.text();
-        if(text && text.toUpperCase().includes('SUCCESS')){
-          thank.style.display='block';
-          setTimeout(()=>{ closeM(); form.reset(); thank.style.display='none'; }, 3500);
-          return;
-        }
-        // If not explicit success, continue to fallback
-      }catch(err){
-        // ignore, continue to fallback
-      }
-
-      // Fallback: no-cors fire-and-forget (still writes sheet, we just can't read response)
-      try{
-        await fetch(API_URL, {
-          method:'POST',
-          mode:'no-cors',
-          body: JSON.stringify(data)
-        });
-        thank.style.display='block';
-        setTimeout(()=>{ closeM(); form.reset(); thank.style.display='none'; }, 3500);
-      }catch(err2){
-        alert('Không gửi được đơn hàng. Bạn vui lòng thử lại!');
-      }
-    });
-  </script>
+/* ================= COUNTDOWN 30' ================= */
+let remain = 30*60; // 30 phút
+const timerEl = document.getElementById('timer');
+setInterval(()=>{
+  const m = String(Math.floor(remain/60)).padStart(2,'0');
+  const s = String(remain%60).padStart(2,'0');
+  timerEl.textContent = `${m}:${s}`;
+  if(remain>0) remain--;
+},1000);
+</script>
 </body>
 </html>
