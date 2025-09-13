@@ -10,9 +10,9 @@
     h1,h2,h3 { margin:10px 0; }
     .hero { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; }
     .hero-images { flex:1; min-width:300px; position:relative; }
-    .hero-images img { width:100%; border-radius:8px; }
-    .thumbnails { display:flex; justify-content:center; margin-top:10px; }
-    .thumbnails img { width:60px; height:60px; margin:0 5px; cursor:pointer; border:2px solid transparent; border-radius:6px; object-fit:cover; }
+    .hero-images img { width:100%; border-radius:8px; height:auto; display:block; }
+    .thumbnails { display:flex; justify-content:center; margin-top:10px; flex-wrap:wrap; }
+    .thumbnails img { width:60px; height:60px; margin:5px; cursor:pointer; border:2px solid transparent; border-radius:6px; object-fit:cover; }
     .thumbnails img.active { border-color:#ff4d4d; }
     .hero-info { flex:1; min-width:280px; padding:20px; }
     .price { font-size:20px; color:#ff4d4d; font-weight:bold; }
@@ -22,7 +22,9 @@
     .countdown { margin-top:10px; font-size:16px; font-weight:bold; color:#ff4d4d; text-align:center; }
     .section { padding:40px 20px; }
     .usp-item { margin-bottom:30px; text-align:center; }
-    .usp-item img { width:100%; max-width:400px; aspect-ratio:1/1; object-fit:cover; border-radius:8px; display:block; margin:auto; }
+    .usp-img-wrapper { width:100%; max-width:400px; margin:auto; position:relative; }
+    .usp-img-wrapper::before { content:""; display:block; padding-top:100%; }
+    .usp-img-wrapper img { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; border-radius:8px; }
     .reviews { overflow:hidden; position:relative; }
     .review-list { display:flex; transition:transform 0.5s ease; }
     .review { min-width:300px; flex:1; margin:10px; padding:20px; border:1px solid #eee; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
@@ -73,17 +75,17 @@
     <div class="usp-item">
       <h2>🔥 Giữ nhiệt vượt trội cả ngày</h2>
       <p>Nhờ công nghệ chân không 2 lớp, cặp lồng Kela giúp cơm canh <b>luôn nóng hổi đến trưa</b>, đồng thời <b>giữ lạnh hiệu quả nhiều giờ</b>, mang đến trải nghiệm tiện lợi cho cả gia đình.</p>
-      <img src="1.png">
+      <div class="usp-img-wrapper"><img src="1.png"></div>
     </div>
     <div class="usp-item">
       <h2>🛡️ Chất liệu Inox 304 cao cấp</h2>
       <p>Cặp lồng giữ nhiệt Kela được làm từ <b>thép không gỉ 304</b>, an toàn tuyệt đối cho sức khỏe, chống gỉ sét, bền đẹp theo thời gian.</p>
-      <img src="2.png">
+      <div class="usp-img-wrapper"><img src="2.png"></div>
     </div>
     <div class="usp-item">
       <h2>👌 Thiết kế gọn gàng – Tiện lợi</h2>
       <p>Thiết kế nhỏ gọn, dễ dàng mang theo đi làm, đi học hay picnic. Có <b>ngăn thìa inox gấp gọn ngay trong nắp</b>, tiện dụng mọi lúc, mọi nơi.</p>
-      <img src="3.png">
+      <div class="usp-img-wrapper"><img src="3.png"></div>
     </div>
   </div>
 
