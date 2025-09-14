@@ -327,157 +327,151 @@
     </div>
   </div>
 
+  
   <!-- Swiper & helpers -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script>
-  // ---------- COUNTDOWN (30 phút, lưu localStorage) ----------
-  (function(){
-    const key='dealCountdownStart';
-    let start=localStorage.getItem(key);
-    if(!start){ start=Date.now(); localStorage.setItem(key, start); }
-    const span=document.getElementById('countdown');
-    const tick=()=> {
-      const elapsed=Date.now()-(+start);
-      const total=30*60*1000; // 30 phút
-      const left=total-elapsed;
-      if(left<=0){ span.textContent='Hết hạn!'; return; }
-      const m=Math.floor(left/60000);
-      const s=Math.floor((left%60000)/1000);
-      span.textContent=(m+'').padStart(2,'0')+':'+(s+'').padStart(2,'0');
-      requestAnimationFrame(tick);
-    };
-    tick();
-  })();
+  document.addEventListener("DOMContentLoaded", () => {
+    // ---------- COUNTDOWN ----------
+    (function(){
+      const key='dealCountdownStart';
+      let start=localStorage.getItem(key);
+      if(!start){ start=Date.now(); localStorage.setItem(key, start); }
+      const span=document.getElementById('countdown');
+      const tick=()=> {
+        const elapsed=Date.now()-(+start);
+        const total=30*60*1000;
+        const left=total-elapsed;
+        if(left<=0){ span.textContent='Hết hạn!'; return; }
+        const m=Math.floor(left/60000);
+        const s=Math.floor((left%60000)/1000);
+        span.textContent=(m+'').padStart(2,'0')+':'+(s+'').padStart(2,'0');
+        requestAnimationFrame(tick);
+      };
+      tick();
+    })();
 
-  // ---------- SWIPER INIT (chắc chắn đúng thứ tự) ----------
-  const thumbsSwiper = new Swiper('#thumbsSwiper', {
-    slidesPerView: 4.5,
-    spaceBetween: 10,
-    freeMode: true,
-    watchSlidesProgress: true,
-    scrollbar: { el: '#thumbsSwiper .swiper-scrollbar', draggable: true },
-    breakpoints:{640:{slidesPerView:5.5},992:{slidesPerView:6}}
-  });
+    // ---------- SWIPER INIT ----------
+    const thumbsSwiper = new Swiper('#thumbsSwiper', {
+      slidesPerView: 4.5,
+      spaceBetween: 10,
+      freeMode: true,
+      watchSlidesProgress: true,
+      scrollbar: { el: '#thumbsSwiper .swiper-scrollbar', draggable: true },
+      breakpoints:{640:{slidesPerView:5.5},992:{slidesPerView:6}}
+    });
 
-  const heroSwiper = new Swiper('#heroSwiper', {
-    spaceBetween: 10,
-    effect: 'slide',
-    loop: false,
-    speed: 350,
-    thumbs: { swiper: thumbsSwiper },
-    on:{
-      slideChange(s){
-        document.getElementById('heroIndex').textContent = (s.activeIndex+1)+' / 6';
+    const heroSwiper = new Swiper('#heroSwiper', {
+      spaceBetween: 10,
+      effect: 'slide',
+      loop: false,
+      speed: 350,
+      thumbs: { swiper: thumbsSwiper },
+      on:{
+        slideChange(s){
+          document.getElementById('heroIndex').textContent = (s.activeIndex+1)+' / 6';
+        }
       }
-    }
-  });
-
-  // ---------- VIDEO SWIPER ----------
-  const videoSwiper = new Swiper('#videoSwiper', {
-    loop:false,
-    spaceBetween:16,
-    slidesPerView:1.1,
-    centeredSlides:false,
-    navigation:{ nextEl:'#videoSwiper .swiper-button-next', prevEl:'#videoSwiper .swiper-button-prev' },
-    pagination:{ el:'#videoSwiper .swiper-pagination', clickable:true },
-    breakpoints:{768:{slidesPerView:2},1024:{slidesPerView:3}}
-  });
-
-  // Video behavior: desktop auto-play (muted/loop); mobile click-to-play
-  (function(){
-    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-    document.querySelectorAll('#videoSwiper video').forEach(v=>{
-      if(!isMobile){ v.play().catch(()=>{}); }
-      v.addEventListener('click', ()=>{ if(v.paused) v.play(); else v.pause(); });
     });
-    // Pause videos when slide not visible
-    videoSwiper.on('slideChange', ()=>{
-      document.querySelectorAll('#videoSwiper video').forEach((v,i)=>{
-        if(Math.abs(i - videoSwiper.activeIndex) > 1) v.pause();
-      });
+
+    const videoSwiper = new Swiper('#videoSwiper', {
+      loop:false,
+      spaceBetween:16,
+      slidesPerView:1.1,
+      centeredSlides:false,
+      navigation:{ nextEl:'#videoSwiper .swiper-button-next', prevEl:'#videoSwiper .swiper-button-prev' },
+      pagination:{ el:'#videoSwiper .swiper-pagination', clickable:true },
+      breakpoints:{768:{slidesPerView:2},1024:{slidesPerView:3}}
     });
-  })();
 
-  // ---------- REVIEW SWIPER ----------
-  const reviewSwiper = new Swiper('#reviewSwiper', {
-    spaceBetween:16,
-    slidesPerView:1.05,
-    navigation:{ nextEl:'#reviewSwiper .swiper-button-next', prevEl:'#reviewSwiper .swiper-button-prev' },
-    pagination:{ el:'#reviewSwiper .swiper-pagination', clickable:true },
-    breakpoints:{768:{slidesPerView:2},1024:{slidesPerView:3}}
-  });
-
-  // ---------- MODAL ----------
-  const modal = document.getElementById('modal');
-  const openModal = ()=>{ modal.style.display='grid'; document.body.style.overflow='hidden'; };
-  const closeModal = ()=>{ modal.style.display='none'; document.body.style.overflow=''; };
-  document.getElementById('ctaTop').addEventListener('click', openModal);
-  document.getElementById('ctaSticky').addEventListener('click', openModal);
-  document.getElementById('closeModal').addEventListener('click', closeModal);
-  modal.addEventListener('click', e=>{ if(e.target===modal) closeModal(); });
-
-  // ---------- ORDER SUBMIT ----------
-  const ENDPOINT = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'; // <-- thay bằng URL Apps Script của bạn
-  function payload(){
-    const phoneRaw = (document.getElementById('fPhone').value||'').trim();
-    const data = {
-      color: document.getElementById('fColor').value,
-      combo: document.getElementById('fCombo').value,
-      name:  (document.getElementById('fName').value||'').trim(),
-      phone: phoneRaw ? ("'"+phoneRaw) : "", // giữ số 0 đầu
-      addr:  (document.getElementById('fAddr').value||'').trim(),
-      note:  (document.getElementById('fNote').value||'').trim(),
-      ts: new Date().toLocaleString('vi-VN')
-    };
-    return data;
-  }
-
-  async function submitOrder(){
-    const data = payload();
-    if(!data.color || !data.combo || !data.name || !data.phone || !data.addr){
-      alert('Vui lòng điền đầy đủ thông tin bắt buộc.'); return;
-    }
-    try{
-      // Gửi JSON trước
-      const r = await fetch(ENDPOINT, {
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body: JSON.stringify(data)
+    (function(){
+      const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+      document.querySelectorAll('#videoSwiper video').forEach(v=>{
+        if(!isMobile){ v.play().catch(()=>{}); }
+        v.addEventListener('click', ()=>{ if(v.paused) v.play(); else v.pause(); });
       });
-      if(!r.ok) throw new Error('JSON fail, fallback');
-      onDone();
-    }catch(e){
-      // Fallback form-encoded
-      const fd = new URLSearchParams();
-      Object.entries(data).forEach(([k,v])=>fd.append(k,v));
-      try{
-        const r2 = await fetch(ENDPOINT, {
-          method:'POST',
-          headers:{'Content-Type':'application/x-www-form-urlencoded'},
-          body: fd.toString()
+      videoSwiper.on('slideChange', ()=>{
+        document.querySelectorAll('#videoSwiper video').forEach((v,i)=>{
+          if(Math.abs(i - videoSwiper.activeIndex) > 1) v.pause();
         });
-        if(!r2.ok) throw new Error('Fallback fail');
+      });
+    })();
+
+    const reviewSwiper = new Swiper('#reviewSwiper', {
+      spaceBetween:16,
+      slidesPerView:1.05,
+      navigation:{ nextEl:'#reviewSwiper .swiper-button-next', prevEl:'#reviewSwiper .swiper-button-prev' },
+      pagination:{ el:'#reviewSwiper .swiper-pagination', clickable:true },
+      breakpoints:{768:{slidesPerView:2},1024:{slidesPerView:3}}
+    });
+
+    // ---------- MODAL ----------
+    const modal = document.getElementById('modal');
+    const openModal = ()=>{ modal.style.display='grid'; document.body.style.overflow='hidden'; };
+    const closeModal = ()=>{ modal.style.display='none'; document.body.style.overflow=''; };
+    document.getElementById('ctaTop').addEventListener('click', openModal);
+    document.getElementById('ctaSticky').addEventListener('click', openModal);
+    document.getElementById('closeModal').addEventListener('click', closeModal);
+    modal.addEventListener('click', e=>{ if(e.target===modal) closeModal(); });
+
+    // ---------- ORDER SUBMIT ----------
+    const ENDPOINT = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+    function payload(){
+      const phoneRaw = (document.getElementById('fPhone').value||'').trim();
+      const data = {
+        color: document.getElementById('fColor').value,
+        combo: document.getElementById('fCombo').value,
+        name:  (document.getElementById('fName').value||'').trim(),
+        phone: phoneRaw ? ("'"+phoneRaw) : "",
+        addr:  (document.getElementById('fAddr').value||'').trim(),
+        note:  (document.getElementById('fNote').value||'').trim(),
+        ts: new Date().toLocaleString('vi-VN')
+      };
+      return data;
+    }
+
+    async function submitOrder(){
+      const data = payload();
+      if(!data.color || !data.combo || !data.name || !data.phone || !data.addr){
+        alert('Vui lòng điền đầy đủ thông tin bắt buộc.'); return;
+      }
+      try{
+        const r = await fetch(ENDPOINT, {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify(data)
+        });
+        if(!r.ok) throw new Error('JSON fail, fallback');
         onDone();
-      }catch(err){
-        alert('Không gửi được đơn hàng. Vui lòng thử lại!');
+      }catch(e){
+        const fd = new URLSearchParams();
+        Object.entries(data).forEach(([k,v])=>fd.append(k,v));
+        try{
+          const r2 = await fetch(ENDPOINT, {
+            method:'POST',
+            headers:{'Content-Type':'application/x-www-form-urlencoded'},
+            body: fd.toString()
+          });
+          if(!r2.ok) throw new Error('Fallback fail');
+          onDone();
+        }catch(err){
+          alert('Không gửi được đơn hàng. Vui lòng thử lại!');
+        }
       }
     }
-  }
 
-  function onDone(){
-    const t = document.getElementById('thanks');
-    t.style.display='block';
-    setTimeout(()=>{ t.style.display='none'; closeModal(); }, 3000);
-    // reset
-    ['fColor','fCombo','fName','fPhone','fAddr','fNote'].forEach(id=>{
-      const el=document.getElementById(id);
-      if(el.tagName==='SELECT') el.selectedIndex=0; else el.value='';
-    });
-  }
-  document.getElementById('submitOrder').addEventListener('click', submitOrder);
-
-  // Avoid any accidental zoom/scale tricks:
-  // No transforms/animations on <body>, and only one viewport meta. 👍
+    function onDone(){
+      const t = document.getElementById('thanks');
+      t.style.display='block';
+      setTimeout(()=>{ t.style.display='none'; closeModal(); }, 3000);
+      ['fColor','fCombo','fName','fPhone','fAddr','fNote'].forEach(id=>{
+        const el=document.getElementById(id);
+        if(el.tagName==='SELECT') el.selectedIndex=0; else el.value='';
+      });
+    }
+    document.getElementById('submitOrder').addEventListener('click', submitOrder);
+  });
   </script>
 </body>
 </html>
+
