@@ -351,7 +351,19 @@
       tick();
     })();
 
-    // ---------- SWIPER INIT ----------
+    // ---------- HERO + THUMBS (manual sync) ----------
+    const heroSwiper = new Swiper('#heroSwiper', {
+      spaceBetween: 10,
+      loop: false,
+      speed: 350,
+      on:{
+        slideChange(s){
+          document.getElementById('heroIndex').textContent = (s.activeIndex+1)+' / 6';
+          updateThumbs(s.activeIndex);
+        }
+      }
+    });
+
     const thumbsSwiper = new Swiper('#thumbsSwiper', {
       slidesPerView: 4.5,
       spaceBetween: 10,
@@ -361,19 +373,21 @@
       breakpoints:{640:{slidesPerView:5.5},992:{slidesPerView:6}}
     });
 
-    const heroSwiper = new Swiper('#heroSwiper', {
-      spaceBetween: 10,
-      effect: 'slide',
-      loop: false,
-      speed: 350,
-      thumbs: { swiper: thumbsSwiper },
-      on:{
-        slideChange(s){
-          document.getElementById('heroIndex').textContent = (s.activeIndex+1)+' / 6';
-        }
-      }
+    function updateThumbs(activeIndex){
+      document.querySelectorAll('#thumbsSwiper .swiper-slide').forEach((el,i)=>{
+        el.classList.toggle('swiper-slide-thumb-active', i===activeIndex);
+      });
+    }
+    updateThumbs(0);
+
+    document.querySelectorAll('#thumbsSwiper .swiper-slide').forEach((el,i)=>{
+      el.addEventListener('click', ()=>{
+        heroSwiper.slideTo(i);
+        updateThumbs(i);
+      });
     });
 
+    // ---------- VIDEO SWIPER ----------
     const videoSwiper = new Swiper('#videoSwiper', {
       loop:false,
       spaceBetween:16,
@@ -397,6 +411,7 @@
       });
     })();
 
+    // ---------- REVIEW SWIPER ----------
     const reviewSwiper = new Swiper('#reviewSwiper', {
       spaceBetween:16,
       slidesPerView:1.05,
