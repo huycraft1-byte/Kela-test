@@ -1,452 +1,243 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cặp lồng giữ nhiệt Kela Đức 1,2L</title>
-  <meta name="description" content="Cặp lồng giữ nhiệt Kela Đức 1,2L - Inox 304 an toàn, giữ nóng 4–6h, giữ lạnh 6–8h. SALE 60% hôm nay, freeship toàn quốc, đổi trả 3 ngày.">
+  <meta name="description" content="Cặp lồng giữ nhiệt Kela Đức 1,2L - Inox 304 an toàn, giữ nóng giữ lạnh nhiều giờ, freeship toàn quốc.">
+
   <!-- Swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
   <style>
     :root{
-      --red:#ff4d4d;
-      --black:#000;
-      --text:#222;
-      --muted:#666;
-      --bg:#fff;
-      --shadow:0 8px 24px rgba(0,0,0,.08);
-      --radius:16px;
-      --max:1200px;
-      --content:960px;
+      --red:#ff4d4d;--black:#000;--text:#222;--muted:#666;--bg:#fff;--shadow:0 4px 16px rgba(0,0,0,0.08);--radius:12px;--maxw:960px;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:#fff;color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";line-height:1.5}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#fff;color:var(--text);}
     img,video{max-width:100%;display:block}
-    a{color:inherit;text-decoration:none}
-    .page{max-width:var(--max);margin:0 auto;padding:16px}
-    .section{padding:32px 0}
-    .center{max-width:var(--content);margin:0 auto}
-    h1,h2,h3{margin:0 0 12px}
-    h1{font-size:34px;font-weight:800}
-    h2{font-size:26px;font-weight:800}
-    .muted{color:var(--muted)}
-    .btn{
-      background:var(--red);color:#fff;border:none;padding:14px 22px;
-      border-radius:12px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(255,77,77,.25);
-    }
-    .btn:active{transform:translateY(1px)}
-    /* HERO */
-    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:flex-start}
-    @media (max-width: 900px){.hero{grid-template-columns:1fr;gap:18px}}
-    .hero-card{position:relative}
-    .hero-main{border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
-    .hero-thumbs{margin-top:10px}
-    .hero-thumbs .swiper-slide{opacity:.7;border:2px solid transparent;border-radius:12px;overflow:hidden}
-    .hero-thumbs .swiper-slide-thumb-active{opacity:1;border-color:var(--red)}
-    /* fraction overlay */
-    .hero-pagination{
-      position:absolute;right:12px;bottom:12px;z-index:5;
-      background:rgba(0,0,0,.55);color:#fff;padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px
-    }
-    .price{display:flex;align-items:baseline;gap:10px;margin:6px 0 10px}
-    .price-now{color:var(--red);font-size:28px;font-weight:800}
-    .price-old{text-decoration:line-through;color:#999}
-    .promo{
-      display:flex;flex-wrap:wrap;gap:8px 10px;margin:10px 0 16px
-    }
-    .chip{
-      background:#fff;border:1px solid #eee;border-radius:999px;padding:8px 12px;
-      font-size:14px;box-shadow:0 3px 10px rgba(0,0,0,.04);display:inline-flex;gap:8px;align-items:center
-    }
-    .chip i{width:18px;height:18px;display:inline-grid;place-items:center;background:#ffe8e8;border-radius:50%;color:var(--red);font-style:normal;font-weight:800;font-size:12px}
-    .countdown{font-weight:700;color:#c21b1b;margin-top:8px}
-    /* Sticky CTA mobile */
-    .sticky-cta{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #eee;padding:10px 14px;display:none;z-index:40}
-    .sticky-cta .btn{width:100%}
-    @media(max-width: 900px){.sticky-cta{display:block}}
-    /* DESCRIPTION */
-    .usp{max-width:var(--content);margin:0 auto}
-    .usp-item{margin:24px 0;padding:18px;border-radius:16px;background:#fff}
-    .usp-item h3{font-size:22px}
-    .usp-item .lead{color:#333}
-    .usp-item .pic{margin-top:12px;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:1/1}
-    .title-center{text-align:center}
-    .title-center .lead{max-width:var(--content);margin:0 auto;color:#333}
-    /* VIDEO slider */
-    .video-wrap{max-width:var(--content);margin:0 auto}
-    .video-slide{border-radius:18px;overflow:hidden;box-shadow:var(--shadow);background:#000}
-    .video-slide video{width:100%;height:auto;display:block}
-    .video-swiper .swiper-pagination{bottom:-22px}
-    /* REVIEW slider */
-    .review-wrap{max-width:var(--content);margin:0 auto}
-    .review-card{
-      background:#fff;border:1px solid #eee;border-radius:18px;padding:16px;box-shadow:var(--shadow)
-    }
-    .review-user{display:flex;gap:12px;align-items:center;margin-bottom:10px}
-    .avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;flex:0 0 44px;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-    .stars{color:#ffb21d;font-size:16px;letter-spacing:2px}
-    .review-swiper .swiper-pagination{position:relative;margin-top:12px}
+    .page{max-width:var(--maxw);margin:auto;padding:16px}
+    h1,h2,h3{margin:12px 0;font-weight:700}
+    h1{font-size:26px} h2{font-size:22px} h3{font-size:18px}
+    p{font-size:16px;line-height:1.5;text-align:justify}
+    .btn{background:var(--red);color:#fff;padding:12px 20px;border:none;border-radius:8px;font-weight:700;cursor:pointer;display:inline-block;text-align:center}
+    .badge{display:inline-block;background:var(--red);color:#fff;padding:6px 12px;border-radius:999px;font-size:14px;margin:6px 0}
+
+    /* Hero */
+    .hero{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start}
+    .hero-text{flex:1;min-width:280px}
+    .hero-swiper{flex:1;min-width:280px}
+    .hero .price{font-size:22px;color:var(--red);font-weight:700}
+    .hero .old{text-decoration:line-through;color:var(--muted);margin-left:8px}
+    .countdown{margin:10px 0;font-size:14px;color:var(--muted)}
+
+    /* Description */
+    .desc{margin:40px auto;max-width:var(--maxw);}
+    .desc-item{display:flex;flex-wrap:wrap;align-items:center;margin-bottom:40px;gap:20px}
+    .desc-item img{flex:1;min-width:250px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .desc-item div{flex:1;min-width:250px}
+
+    /* Video */
+    .video-section{margin:60px auto;max-width:var(--maxw)}
+    .video-section h2{text-align:center;margin-bottom:20px}
+    .video-slide video{border-radius:var(--radius);box-shadow:var(--shadow)}
+
+    /* Review */
+    .review-section{margin:60px auto;max-width:var(--maxw)}
+    .review-section h2{text-align:center;margin-bottom:20px}
+    .review-card{background:#fff;padding:20px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .review-card img{width:60px;height:60px;border-radius:50%;margin-bottom:10px}
+    .review-card p{text-align:left;font-size:15px}
+
     /* FAQ */
-    details{border-bottom:1px solid #eee;padding:12px 0}
-    summary{cursor:pointer;list-style:none;font-weight:700}
-    summary::marker,summary::-webkit-details-marker{display:none}
-    summary .q{margin-right:8px}
-    /* ORDER MODAL */
-    .modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;place-items:center;z-index:50}
-    .modal.open{display:grid}
-    .modal-card{background:#fff;border-radius:var(--radius);max-width:560px;width:min(95vw,560px);padding:18px 18px 16px;box-shadow:var(--shadow);position:relative}
-    .modal-card h3{margin-bottom:10px}
-    .modal-close{position:absolute;right:10px;top:10px;background:#f3f3f3;border:none;border-radius:999px;width:32px;height:32px;cursor:pointer;font-weight:800}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    @media(max-width:560px){.grid{grid-template-columns:1fr}}
-    .field, select, textarea, input{
-      width:100%;padding:12px 12px;border:1px solid #ddd;border-radius:10px;background:#fff;font-size:16px
+    .faq{margin:60px auto;max-width:var(--maxw)}
+    .faq h2{text-align:center;margin-bottom:20px}
+    .faq-item{border-bottom:1px solid #ddd;padding:12px 0;cursor:pointer}
+    .faq-item h3{font-size:16px;display:flex;align-items:center;justify-content:space-between}
+    .faq-item p{display:none;margin-top:6px}
+
+    /* Modal */
+    .modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:1000}
+    .modal-content{background:#fff;padding:20px;border-radius:var(--radius);max-width:400px;width:100%;position:relative}
+    .modal-content h2{margin-top:0}
+    .modal-content input,.modal-content select,.modal-content textarea{width:100%;padding:10px;margin:6px 0;border:1px solid #ccc;border-radius:8px}
+    .modal-close{position:absolute;top:10px;right:10px;cursor:pointer;font-size:18px}
+
+    /* Footer */
+    footer{background:#f9f9f9;padding:20px;margin-top:60px;font-size:14px;color:var(--muted)}
+    footer .cols{display:flex;flex-wrap:wrap;gap:20px;max-width:var(--maxw);margin:auto}
+    footer div{flex:1;min-width:200px}
+
+    @media(max-width:768px){
+      .hero{flex-direction:column}
+      .desc-item{flex-direction:column}
     }
-    textarea{min-height:80px;resize:vertical}
-    .mt-12{margin-top:12px}
-    .toast{position:fixed;inset:0;display:none;place-items:center;z-index:60;background:rgba(0,0,0,.55)}
-    .toast .box{background:#fff;border-radius:14px;padding:20px 18px;box-shadow:var(--shadow);text-align:center;max-width:90vw}
-    .toast.show{display:grid}
-    /* FOOTER */
-    .footer{background:#fafafa;border-top:1px solid #eee;margin-top:40px}
-    .foot-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:22px}
-    @media(max-width:900px){.foot-grid{grid-template-columns:1fr}}
-    .usp-line{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
-    .usp-line .chip{background:#fff}
-    .muted-small{color:#777;font-size:14px}
+    /* Sticky CTA mobile */
+    .sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;padding:10px;border-top:1px solid #ddd;z-index:999;}
+    .sticky-cta button{width:100%}
+    @media(max-width:768px){.sticky-cta{display:block}}
   </style>
 </head>
 <body>
+
   <div class="page">
-    <!-- ================= HERO ================= -->
-    <section class="section hero">
-      <div class="hero-card">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-swiper">
         <div class="swiper hero-main">
           <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="assets/1.png" alt="Kela 1"></div>
-            <div class="swiper-slide"><img src="assets/2.png" alt="Kela 2"></div>
-            <div class="swiper-slide"><img src="assets/3.png" alt="Kela 3"></div>
-            <div class="swiper-slide"><img src="assets/4.png" alt="Kela 4"></div>
-            <div class="swiper-slide"><img src="assets/5.png" alt="Kela 5"></div>
-            <div class="swiper-slide"><img src="assets/6.png" alt="Kela 6"></div>
+            <div class="swiper-slide"><img src="assets/1.png" alt="sp1"></div>
+            <div class="swiper-slide"><img src="assets/2.png" alt="sp2"></div>
+            <div class="swiper-slide"><img src="assets/3.png" alt="sp3"></div>
+            <div class="swiper-slide"><img src="assets/4.png" alt="sp4"></div>
+            <div class="swiper-slide"><img src="assets/5.png" alt="sp5"></div>
+            <div class="swiper-slide"><img src="assets/6.png" alt="sp6"></div>
           </div>
-          <div class="hero-pagination"></div>
+          <div class="swiper-pagination"></div>
         </div>
         <div class="swiper hero-thumbs">
           <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="assets/1.png" alt=""></div>
-            <div class="swiper-slide"><img src="assets/2.png" alt=""></div>
-            <div class="swiper-slide"><img src="assets/3.png" alt=""></div>
-            <div class="swiper-slide"><img src="assets/4.png" alt=""></div>
-            <div class="swiper-slide"><img src="assets/5.png" alt=""></div>
-            <div class="swiper-slide"><img src="assets/6.png" alt=""></div>
+            <div class="swiper-slide"><img src="assets/1.png"></div>
+            <div class="swiper-slide"><img src="assets/2.png"></div>
+            <div class="swiper-slide"><img src="assets/3.png"></div>
+            <div class="swiper-slide"><img src="assets/4.png"></div>
+            <div class="swiper-slide"><img src="assets/5.png"></div>
+            <div class="swiper-slide"><img src="assets/6.png"></div>
           </div>
         </div>
       </div>
-
-      <div>
+      <div class="hero-text">
         <h1>Cặp lồng giữ nhiệt Kela Đức 1,2L</h1>
-        <div class="price">
-          <div class="price-now">350.000đ</div>
-          <div class="price-old">870.000đ</div>
-        </div>
-        <div class="promo">
-          <span class="chip"><i>🔥</i> SALE 60% hôm nay – Số lượng có hạn</span>
-          <span class="chip"><i>🚚</i> Freeship toàn quốc</span>
-          <span class="chip"><i>🔄</i> Đổi trả 3 ngày</span>
-          <span class="chip"><i>🛡️</i> Hàng chính hãng</span>
-        </div>
-        <button class="btn" id="btnBuyTop">MUA NGAY – Giảm 60%</button>
-        <div class="countdown" id="countdownTxt">Ưu đãi kết thúc sau: --:--</div>
+        <div><span class="price">350.000đ</span><span class="old">870.000đ</span></div>
+        <div class="badge">🔥 SALE 60% hôm nay – Freeship toàn quốc</div>
+        <button class="btn open-modal">Mua ngay – Giảm 60%</button>
+        <div class="countdown">Ưu đãi kết thúc sau: <span id="timer"></span></div>
       </div>
     </section>
 
-    <!-- Sticky CTA (mobile) -->
-    <div class="sticky-cta">
-      <button class="btn" id="btnBuySticky">MUA NGAY – Giảm 60%</button>
+    <!-- Description -->
+    <section class="desc">
+      <div class="desc-item">
+        <div>
+          <h2>🔥 Giữ nhiệt vượt trội cả ngày</h2>
+          <p>Nhờ công nghệ chân không 2 lớp, cặp lồng Kela giúp cơm canh luôn nóng hổi đến trưa, đồng thời giữ lạnh hiệu quả nhiều giờ, mang đến trải nghiệm tiện lợi cho cả gia đình.</p>
+        </div>
+        <img src="assets/1.png" alt="usp1">
+      </div>
+      <div class="desc-item">
+        <img src="assets/2.png" alt="usp2">
+        <div>
+          <h2>🥇 Chất liệu Inox 304 cao cấp</h2>
+          <p>Cặp lồng giữ nhiệt Kela được làm từ thép không gỉ 304, an toàn tuyệt đối cho sức khỏe, chống gỉ sét, bền đẹp theo thời gian – lựa chọn lý tưởng cho người quan tâm chất lượng.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video -->
+    <section class="video-section">
+      <h2>🎥 Video thực tế từ khách hàng</h2>
+      <div class="swiper video-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide video-slide"><video src="assets/v4.mp4" autoplay muted loop playsinline></video></div>
+          <div class="swiper-slide video-slide"><video src="assets/v3.mp4" autoplay muted loop playsinline></video></div>
+          <div class="swiper-slide video-slide"><video src="assets/v2.mp4" autoplay muted loop playsinline></video></div>
+          <div class="swiper-slide video-slide"><video src="assets/v1.mp4" autoplay muted loop playsinline></video></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!-- Review -->
+    <section class="review-section">
+      <h2>✨ Trải nghiệm thực tế từ khách hàng</h2>
+      <div class="swiper review-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide review-card"><img src="assets/2.png"><h3>Nguyễn Thảo ⭐⭐⭐⭐⭐</h3><p>Cơm mang từ sáng đến trưa vẫn nóng hổi.</p></div>
+          <div class="swiper-slide review-card"><img src="assets/3.png"><h3>Thu Hà ⭐⭐⭐⭐⭐</h3><p>Inox 304 an toàn, yên tâm.</p></div>
+          <div class="swiper-slide review-card"><img src="assets/6.png"><h3>Minh Khoa ⭐⭐⭐⭐☆</h3><p>Sản phẩm chắc chắn, giữ nhiệt tốt.</p></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <h2>❓ Câu hỏi thường gặp</h2>
+      <div class="faq-item"><h3>Hộp giữ nóng được bao lâu?<span>+</span></h3><p>4–6 giờ và giữ lạnh 6–8 giờ.</p></div>
+      <div class="faq-item"><h3>Có bị tràn khi để trong balo?<span>+</span></h3><p>Không, nắp khóa kín và ron chống tràn.</p></div>
+      <div class="faq-item"><h3>Có kèm thìa không?<span>+</span></h3><p>Có, sản phẩm tặng kèm thìa inox gấp gọn.</p></div>
+    </section>
+
+    <!-- Modal Order Form -->
+    <div class="modal" id="orderModal">
+      <div class="modal-content">
+        <span class="modal-close">×</span>
+        <h2>Đặt hàng ngay</h2>
+        <form id="orderForm">
+          <select name="color"><option>Chọn màu</option><option>Hồng</option><option>Bạc</option></select>
+          <select name="combo"><option>Chọn combo</option><option>1 sản phẩm</option><option>2 sản phẩm</option></select>
+          <input type="text" name="name" placeholder="Họ tên" required>
+          <input type="tel" name="phone" placeholder="Số điện thoại" required>
+          <input type="text" name="address" placeholder="Địa chỉ" required>
+          <textarea name="note" placeholder="Ghi chú"></textarea>
+          <button class="btn" type="submit">Xác nhận đặt hàng</button>
+        </form>
+      </div>
     </div>
 
-    <!-- =============== DESCRIPTION =============== -->
-    <section class="section title-center">
-      <h2>🔥 Giữ nhiệt vượt trội cả ngày</h2>
-      <p class="lead">Nhờ công nghệ chân không 2 lớp, cặp lồng Kela giúp cơm canh <b>luôn nóng hổi đến trưa</b>, đồng thời <b>giữ lạnh hiệu quả nhiều giờ</b>, mang đến trải nghiệm tiện lợi cho cả gia đình.</p>
-      <div class="usp">
-        <div class="usp-item center">
-          <h3>🛡️ Chất liệu Inox 304 cao cấp</h3>
-          <p class="lead">Cặp lồng giữ nhiệt Kela được làm từ <b>thép không gỉ 304</b>, an toàn tuyệt đối cho sức khoẻ, chống gỉ sét, bền đẹp theo thời gian – lựa chọn lý tưởng cho người quan tâm chất lượng.</p>
-          <div class="pic"><img src="assets/2.png" alt=""></div>
-        </div>
-        <div class="usp-item center">
-          <h3>👌 Thiết kế gọn gàng – Tiện lợi</h3>
-          <p class="lead">Thiết kế nhỏ gọn, dễ mang theo đi làm, đi học hay picnic. Có <b>thìa inox gấp gọn</b> ngay trong nắp – sạch sẽ & tiện dụng mọi lúc.</p>
-          <div class="pic"><img src="assets/3.png" alt=""></div>
-        </div>
-      </div>
-    </section>
+  </div>
 
-    <!-- =============== VIDEO =============== -->
-    <section class="section">
-      <div class="title-center">
-        <h2>🎥 Video thực tế từ khách hàng</h2>
-      </div>
-      <div class="video-wrap">
-        <div class="swiper video-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide video-slide"><video muted playsinline loop preload="metadata" src="assets/v4.mp4"></video></div>
-            <div class="swiper-slide video-slide"><video muted playsinline loop preload="metadata" src="assets/v3.mp4"></video></div>
-            <div class="swiper-slide video-slide"><video muted playsinline loop preload="metadata" src="assets/v2.mp4"></video></div>
-            <div class="swiper-slide video-slide"><video muted playsinline loop preload="metadata" src="assets/v1.mp4"></video></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
+  <!-- Sticky CTA mobile -->
+  <div class="sticky-cta"><button class="btn open-modal">Mua ngay – Giảm 60%</button></div>
 
-    <!-- =============== REVIEW =============== -->
-    <section class="section">
-      <div class="title-center">
-        <h2>✨ Trải nghiệm thực tế từ khách hàng</h2>
+  <!-- Footer -->
+  <footer>
+    <div class="cols">
+      <div>
+        🚚 Freeship toàn quốc | 🔄 Đổi trả 3 ngày | 🛡️ Hàng chính hãng | ☎️ Hỗ trợ 24/7
       </div>
-      <div class="review-wrap">
-        <div class="swiper review-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="review-card">
-                <div class="review-user">
-                  <span class="avatar"><img src="assets/2.png" alt=""></span>
-                  <div><strong>Nguyễn Thảo</strong><div class="stars">★★★★★</div></div>
-                </div>
-                Cơm mang từ sáng đến trưa vẫn nóng hổi. Thiết kế gọn gàng, bỏ balo không lo đổ.
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="review-card">
-                <div class="review-user">
-                  <span class="avatar"><img src="assets/3.png" alt=""></span>
-                  <div><strong>Thu Hà</strong><div class="stars">★★★★★</div></div>
-                </div>
-                Hộp giúp giữ nóng cả buổi, bé ăn ngon hơn. Inox 304 an toàn nên yên tâm.
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="review-card">
-                <div class="review-user">
-                  <span class="avatar"><img src="assets/6.png" alt=""></span>
-                  <div><strong>Minh Khoa</strong><div class="stars">★★★★★</div></div>
-                </div>
-                Sản phẩm chắc chắn, giữ nhiệt cực tốt. Giao hàng nhanh và đóng gói cẩn thận.
-              </div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =============== FAQ =============== -->
-    <section class="section center">
-      <div class="title-center">
-        <h2>❓ Câu hỏi thường gặp</h2>
-      </div>
-      <details open>
-        <summary><span class="q">❓</span>Hộp giữ nóng được bao lâu?</summary>
-        <div>Cặp lồng giữ nhiệt Kela có khả năng giữ nóng <b>4–6 giờ</b> và giữ lạnh <b>6–8 giờ</b> nhờ công nghệ chân không 2 lớp.</div>
-      </details>
-      <details>
-        <summary><span class="q">❓</span>Có bị tràn khi để trong balo?</summary>
-        <div>Không. Nắp khoá kín + ron chống tràn giúp bạn yên tâm khi di chuyển, không lo rò rỉ.</div>
-      </details>
-      <details>
-        <summary><span class="q">❓</span>Có kèm thìa không?</summary>
-        <div>Có. Sản phẩm tặng kèm <b>thìa inox gấp gọn</b> nằm ngay trong nắp – tiện & sạch.</div>
-      </details>
-    </section>
-
-    <!-- =============== FOOTER ORDER (CTA cuối) =============== -->
-    <section class="section title-center">
-      <button class="btn" id="btnBuyBottom">ĐẶT HÀNG NGAY</button>
-    </section>
-
-  </div><!-- page -->
-
-  <footer class="footer">
-    <div class="page">
-      <div class="usp-line">
-        <span class="chip"><i>🚚</i> Freeship toàn quốc</span>
-        <span class="chip"><i>🔄</i> Đổi trả trong 3 ngày</span>
-        <span class="chip"><i>🛡️</i> Hàng chính hãng</span>
-        <span class="chip"><i>☎️</i> Hỗ trợ 24/7</span>
-      </div>
-      <div class="foot-grid">
-        <div>
-          <h3>[Logo Kela]</h3>
-          <p class="muted-small">Chúng tôi tin rằng một sản phẩm tốt không chỉ giúp bạn tiện lợi hơn trong cuộc sống mà còn mang lại sự an tâm cho sức khỏe cả gia đình.</p>
-        </div>
-        <div class="muted-small">
-          <p><b>Địa chỉ:</b> 2b Vương Thừa Vũ</p>
-          <p><b>Hotline:</b> 0915593392</p>
-          <p><b>Email:</b> stgd@gmail.com</p>
-          <p><b>Website:</b> huycraft1-byte.github.io</p>
-        </div>
+      <div>
+        <strong>Công ty ABC</strong><br>Địa chỉ: Hà Nội<br>Hotline: 0123 456 789<br>Email: support@example.com
       </div>
     </div>
   </footer>
 
-  <!-- ================= MODAL ORDER ================= -->
-  <div class="modal" id="orderModal" aria-hidden="true">
-    <div class="modal-card">
-      <button class="modal-close" id="closeModal">×</button>
-      <h3>Thông tin đặt hàng</h3>
-      <div class="grid">
-        <select id="mau" class="field">
-          <option value="" hidden>Chọn màu *</option>
-          <option>Inox</option>
-          <option>Hồng</option>
-        </select>
-        <select id="combo" class="field">
-          <option value="" hidden>Chọn combo *</option>
-          <option>Mua 1 – 350K</option>
-          <option>Mua 2 – 650K</option>
-        </select>
-      </div>
-      <div class="grid mt-12">
-        <input class="field" id="hoten" placeholder="Họ tên *" />
-        <input class="field" id="sdt" placeholder="Số điện thoại *" inputmode="numeric" />
-      </div>
-      <input class="field mt-12" id="diachi" placeholder="Địa chỉ *" />
-      <textarea class="mt-12" id="ghichu" placeholder="Ghi chú (tuỳ chọn)"></textarea>
-      <div class="mt-12" style="text-align:right">
-        <button class="btn" id="submitOrder">Xác nhận đặt hàng</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Thank you toast -->
-  <div class="toast" id="toast">
-    <div class="box">
-      <div style="font-size:20px">✅ Cảm ơn bạn đã đặt hàng!</div>
-      <div class="muted" style="margin-top:6px">Nhân viên sẽ liên hệ xác nhận đơn trong thời gian sớm nhất.</div>
-    </div>
-  </div>
-
-  <!-- Swiper & JS -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script>
-    // ======= Countdown 30' lưu localStorage
-    (function(){
-      const KEY="kelaCountdownStart";
-      const el=document.getElementById('countdownTxt');
-      const DUR=30*60*1000; // 30 phút
-      let start=localStorage.getItem(KEY);
-      if(!start){ start=Date.now(); localStorage.setItem(KEY,start); }
-      function tick(){
-        const left = Math.max(0,(Number(start)+DUR) - Date.now());
-        const m = Math.floor(left/60000).toString().padStart(2,'0');
-        const s = Math.floor((left%60000)/1000).toString().padStart(2,'0');
-        el.textContent = left>0 ? `Ưu đãi kết thúc sau: ${m}:${s}` : 'Hết hạn!';
-        if(left>0) requestAnimationFrame(()=>setTimeout(tick,250)); 
-      }
-      tick();
-    })();
+    // Hero Swiper
+    var thumbs = new Swiper('.hero-thumbs',{spaceBetween:10,slidesPerView:4,freeMode:true,watchSlidesProgress:true});
+    var main = new Swiper('.hero-main',{spaceBetween:10,thumbs:{swiper:thumbs},pagination:{el:'.hero-main .swiper-pagination',type:'fraction'}});
 
-    // ======= Swiper HERO: main + thumbs + fraction
-    const thumbs = new Swiper('.hero-thumbs', {
-      spaceBetween:10,
-      slidesPerView:6,
-      freeMode:true,
-      watchSlidesProgress:true,
-      breakpoints:{0:{slidesPerView:4},600:{slidesPerView:6}}
-    });
-    const hero = new Swiper('.hero-main', {
-      spaceBetween:10,
-      loop:false,
-      thumbs:{ swiper: thumbs },
-      pagination:{ el:'.hero-pagination', type:'fraction' }
-    });
+    // Video Swiper
+    new Swiper('.video-swiper',{slidesPerView:1.2,spaceBetween:16,pagination:{el:'.video-swiper .swiper-pagination',clickable:true},breakpoints:{768:{slidesPerView:3}}});
 
-    // ======= Video Swiper
-    const vidSwiper = new Swiper('.video-swiper', {
-      spaceBetween:16,
-      slidesPerView:1.05,
-      centeredSlides:false,
-      pagination:{el:'.video-swiper .swiper-pagination', clickable:true},
-      breakpoints:{900:{slidesPerView:2, spaceBetween:18}}
-    });
+    // Review Swiper
+    new Swiper('.review-swiper',{slidesPerView:1.05,spaceBetween:16,pagination:{el:'.review-swiper .swiper-pagination',clickable:true},breakpoints:{768:{slidesPerView:3}}});
 
-    // Autoplay video trên desktop, mobile click-to-play
-    function isMobile(){return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);}
-    const videos = document.querySelectorAll('.video-slide video');
-    if(!isMobile()){
-      videos.forEach(v=>{ v.muted=true; v.loop=true; v.play().catch(()=>{}); });
-    }else{
-      videos.forEach(v=>{ v.controls=true; });
-    }
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(i=>{
+      i.onclick=()=>{let p=i.querySelector('p');p.style.display=p.style.display==='block'?'none':'block'}
+    })
 
-    // ======= Review Swiper
-    const reviewSwiper = new Swiper('.review-swiper', {
-      slidesPerView:1.05,
-      spaceBetween:14,
-      pagination:{el:'.review-swiper .swiper-pagination', clickable:true},
-      breakpoints:{900:{slidesPerView:3, spaceBetween:18}}
-    });
+    // Modal
+    const modal=document.getElementById('orderModal');
+    document.querySelectorAll('.open-modal').forEach(b=>b.onclick=()=>modal.style.display='flex');
+    document.querySelector('.modal-close').onclick=()=>modal.style.display='none';
+    window.onclick=e=>{if(e.target==modal)modal.style.display='none'}
 
-    // ======= Modal Order
-    const modal = document.getElementById('orderModal');
-    const toast = document.getElementById('toast');
-    const openBtns = ['btnBuyTop','btnBuyBottom','btnBuySticky'];
-    openBtns.forEach(id=>{
-      const b=document.getElementById(id); if(b) b.addEventListener('click',()=>modal.classList.add('open'));
-    });
-    document.getElementById('closeModal').addEventListener('click',()=>modal.classList.remove('open'));
-    modal.addEventListener('click',e=>{ if(e.target===modal) modal.classList.remove('open'); });
+    // Countdown localStorage
+    function startTimer(duration){let end=localStorage.getItem('countdownEnd');if(!end){end=Date.now()+duration*1000;localStorage.setItem('countdownEnd',end);}function update(){let now=Date.now();let diff=Math.floor((end-now)/1000);if(diff<=0){document.getElementById('timer').innerText='Hết hạn!';return}let m=Math.floor(diff/60),s=diff%60;document.getElementById('timer').innerText=`${m}:${s.toString().padStart(2,'0')}`;requestAnimationFrame(update);}update();}
+    startTimer(30*60);
 
-    // ======= Submit order
-    const ENDPOINT = "https://script.google.com/macros/s/AKfycbwch0w8Rz-F8MhOa79B3sS8pDKGt0bt4U0ZhA1xwFs2vCctSWaVwgBgD4jgkQlsgWDPUQ/exec";
-
-    function showToast(){
-      toast.classList.add('show');
-      setTimeout(()=>toast.classList.remove('show'), 3200);
-    }
-
-    function val(id){ return document.getElementById(id).value.trim(); }
-
-    async function sendOrder(){
-      const data = {
-        mau: val('mau'),
-        combo: val('combo'),
-        hoten: val('hoten'),
-        sdt: val('sdt') ? "'" + val('sdt') : "", // giữ số 0 đầu
-        diachi: val('diachi'),
-        ghichu: val('ghichu'),
-      };
-      // validate
-      if(!data.mau || !data.combo || !data.hoten || !val('sdt') || !data.diachi){
-        alert('Vui lòng điền đầy đủ các mục bắt buộc (*)');
-        return;
-      }
+    // Form submit
+    document.getElementById('orderForm').onsubmit=async e=>{
+      e.preventDefault();
+      const data=Object.fromEntries(new FormData(e.target).entries());
+      data.phone="'"+data.phone;
       try{
-        // JSON trước
-        const r = await fetch(ENDPOINT, {
-          method:'POST',
-          headers:{'Content-Type':'application/json'},
-          body: JSON.stringify(data)
-        });
-        if(!r.ok) throw new Error('JSON submit fail');
-      }catch(e){
-        // Fallback urlencoded
-        const form = new URLSearchParams(data).toString();
-        await fetch(ENDPOINT, {
-          method:'POST',
-          headers:{'Content-Type':'application/x-www-form-urlencoded'},
-          body: form
-        }).catch(()=>{});
-      }
-      modal.classList.remove('open');
-      showToast();
-      // reset fields
-      ['mau','combo','hoten','sdt','diachi','ghichu'].forEach(id=>document.getElementById(id).value="");
+        await fetch('YOUR_GOOGLE_SCRIPT_URL',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+        alert('✅ Cảm ơn bạn đã đặt hàng!');modal.style.display='none';e.target.reset();
+      }catch(err){alert('Lỗi, thử lại!')}
     }
-    document.getElementById('submitOrder').addEventListener('click',sendOrder);
   </script>
 </body>
 </html>
