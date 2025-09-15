@@ -120,9 +120,9 @@
 
 .video-item {
   width: 100%;
-  height: auto;
+  aspect-ratio: 9/16;
+  max-height: 500px;
   border-radius: 12px;
-  max-height: 400px;
   object-fit: cover;
 }
 .carousel-cell {
@@ -199,30 +199,27 @@
 
     
     
+
 <section class="video-section">
     <div class="container">
         <h2>🎥 Video thực tế từ khách hàng</h2>
         <div class="video-slider">
             <div class="carousel-cell">
-                <video class="video-item" controls src="assets/v1.mp4" muted loop playsinline></video>
+                <video class="video-item" src="assets/v1.mp4" muted loop playsinline controls></video>
             </div>
             <div class="carousel-cell">
-                <video class="video-item" controls src="assets/v2.mp4" muted loop playsinline></video>
+                <video class="video-item" src="assets/v2.mp4" muted loop playsinline controls></video>
             </div>
             <div class="carousel-cell">
-                <video class="video-item" controls src="assets/v3.mp4" muted loop playsinline></video>
+                <video class="video-item" src="assets/v3.mp4" muted loop playsinline controls></video>
             </div>
             <div class="carousel-cell">
-                <video class="video-item" controls src="assets/v4.mp4" muted loop playsinline></video>
-            </div>
-            <div class="carousel-cell">
-                <iframe class="video-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                <video class="video-item" src="assets/v4.mp4" muted loop playsinline controls></video>
             </div>
         </div>
     </div>
 </section>
+
 
 
     
