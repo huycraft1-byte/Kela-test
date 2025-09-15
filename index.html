@@ -116,7 +116,25 @@
         }
         .toast { position: fixed; top: 20px; right: 20px; background-color: #28a745; color: white; padding: 15px 20px; border-radius: 8px; z-index: 2000; opacity: 0; transform: translateY(-30px); transition: opacity 0.3s, transform 0.3s; }
         .toast.show { opacity: 1; transform: translateY(0); }
-    </style>
+    
+
+.video-item {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  max-height: 400px;
+  object-fit: cover;
+}
+.carousel-cell {
+  width: 80%;
+  margin-right: 10px;
+}
+@media(min-width: 768px) {
+  .carousel-cell {
+    width: 30%;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -186,16 +204,16 @@
         <h2>🎥 Video thực tế từ khách hàng</h2>
         <div class="video-slider">
             <div class="carousel-cell">
-                <video class="video-item" src="assets/v1.mp4" muted loop playsinline></video>
+                <video class="video-item" controls src="assets/v1.mp4" muted loop playsinline></video>
             </div>
             <div class="carousel-cell">
-                <video class="video-item" src="assets/v2.mp4" muted loop playsinline></video>
+                <video class="video-item" controls src="assets/v2.mp4" muted loop playsinline></video>
             </div>
             <div class="carousel-cell">
-                <video class="video-item" src="assets/v3.mp4" muted loop playsinline></video>
+                <video class="video-item" controls src="assets/v3.mp4" muted loop playsinline></video>
             </div>
             <div class="carousel-cell">
-                <video class="video-item" src="assets/v4.mp4" muted loop playsinline></video>
+                <video class="video-item" controls src="assets/v4.mp4" muted loop playsinline></video>
             </div>
             <div class="carousel-cell">
                 <iframe class="video-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
