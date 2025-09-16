@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cặp lồng giữ nhiệt Kela Đức 1,2L</title>
     
-    <!-- Flickity CSS -->
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
     <style>
@@ -118,23 +117,31 @@
         .toast.show { opacity: 1; transform: translateY(0); }
     
 
-.video-item {
-  width: 100%;
-  aspect-ratio: 9/16;
-  max-height: 500px;
-  border-radius: 12px;
-  object-fit: cover;
-}
-.carousel-cell {
-  width: 80%;
-  margin-right: 10px;
-}
-@media(min-width: 768px) {
-  .carousel-cell {
-    width: 30%;
-  }
-}
-</style>
+        /* === Bắt đầu đoạn mã sửa lỗi video === */
+        .video-slide {
+          /* Tăng chiều rộng của mỗi video trên di động */
+          width: 80%; 
+          margin-right: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .video-item {
+          width: 100%;
+          /* Đặt đúng tỷ lệ khung hình dọc 9:16 */
+          aspect-ratio: 9 / 16; 
+          border-radius: 12px;
+        }
+
+        /* Giữ nguyên kích thước trên máy tính */
+        @media(min-width: 768px) {
+          .video-slide {
+            width: 30%;
+          }
+        }
+        /* === Kết thúc đoạn mã sửa lỗi video === */
+    </style>
 </head>
 <body>
 
@@ -203,19 +210,44 @@
 <section class="video-section">
     <div class="container">
         <h2>🎥 Video thực tế từ khách hàng</h2>
-        <div class="video-slider">
-            <div class="carousel-cell">
-                <video class="video-item" src="assets/v1.mp4" muted loop playsinline controls></video>
+        <div class="video-slider swiper" id="videoSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide video-slide">
+                    <iframe class="video-item"
+                        src="https://www.youtube.com/embed/G4EpcYIJP7I?rel=0"
+                        frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="swiper-slide video-slide">
+                    <iframe class="video-item"
+                        src="https://www.youtube.com/embed/FPEZ9hcpKlA?rel=0"
+                        frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="swiper-slide video-slide">
+                    <iframe class="video-item"
+                        src="https://www.youtube.com/embed/EzoxnH0-9Pg?rel=0"
+                        frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="swiper-slide video-slide">
+                    <iframe class="video-item"
+                        src="https://www.youtube.com/embed/IDhLryG2xUY?rel=0"
+                        frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </div>
-            <div class="carousel-cell">
-                <video class="video-item" src="assets/v2.mp4" muted loop playsinline controls></video>
-            </div>
-            <div class="carousel-cell">
-                <video class="video-item" src="assets/v3.mp4" muted loop playsinline controls></video>
-            </div>
-            <div class="carousel-cell">
-                <video class="video-item" src="assets/v4.mp4" muted loop playsinline controls></video>
-            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
     </div>
 </section>
@@ -561,4 +593,3 @@
     </script>
 </body>
 </html>
-
