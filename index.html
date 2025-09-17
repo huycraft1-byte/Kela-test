@@ -37,7 +37,7 @@
         .cta-button { display: inline-block; background-color: var(--color-primary); color: var(--color-light); font-size: 18px; font-weight: bold; text-align: center; padding: 15px 30px; border: none; border-radius: 8px; cursor: pointer; text-decoration: none; width: 100%; transition: transform 0.2s, box-shadow 0.2s; }
         .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(255, 77, 77, 0.4); }
         
-        /* === SỬA LAYOUT TRÀN MÀN HÌNH PC === */
+        /* === FINAL LAYOUT - BÁM SÁT MẪU === */
 
         .top-bar-sticky {
             background-color: var(--color-primary);
@@ -67,21 +67,17 @@
         
         @media (min-width: 992px) {
             .hero-section {
-                min-height: 100vh;
+                padding: 80px 40px; /* Dùng padding lớn để tạo không gian */
                 display: flex;
-                align-items: center;
                 justify-content: center;
-                width: 100%;
             }
-            /* BỎ GIỚI HẠN CHIỀU RỘNG, THAY BẰNG PADDING */
             .hero-section .container {
                 flex-direction: row;
-                align-items: center;
-                justify-content: center;
+                align-items: flex-start; /* Căn lề trên */
                 gap: 60px;
-                max-width: none; /* Bỏ giới hạn chiều rộng */
-                width: 100%; /* Rộng 100% */
-                padding: 40px 60px; /* Dùng padding để tạo khoảng cách với cạnh màn hình */
+                max-width: 1280px; /* Đặt lại chiều rộng tối đa hợp lý */
+                width: 100%;
+                padding: 0; 
             }
             .product-gallery, .product-info {
                 flex: 1 1 0;
