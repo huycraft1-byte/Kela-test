@@ -37,62 +37,66 @@
         .cta-button { display: inline-block; background-color: var(--color-primary); color: var(--color-light); font-size: 18px; font-weight: bold; text-align: center; padding: 15px 30px; border: none; border-radius: 8px; cursor: pointer; text-decoration: none; width: 100%; transition: transform 0.2s, box-shadow 0.2s; }
         .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(255, 77, 77, 0.4); }
         
-        /* === SỬA LỖI HERO SECTION & CÁC PHẦN KHÁC === */
+        /* === SỬA LAYOUT TO HẾT CỠ === */
 
-        /* 1. SỬA TOP BAR: Tăng kích thước và đảm bảo không che nội dung */
+        /* 1. TOP BAR: To và nổi bật hơn */
         .top-bar-sticky {
             background-color: var(--color-primary);
             color: var(--color-light);
             text-align: center;
-            padding: 12px 10px; /* Tăng padding */
+            padding: 14px 10px; /* Tăng padding */
             font-weight: bold;
-            font-size: 16px; /* Tăng font-size */
+            font-size: 17px; /* Tăng font-size */
             position: sticky;
             top: 0;
             z-index: 1000;
             width: 100%;
         }
-        /* Dùng margin-top cho section đầu tiên thay vì padding-body để ổn định hơn */
-        .hero-section {
-            margin-top: 53px; /* Chiều cao của top bar */
-        }
         
-        /* 2. SỬA HERO SECTION: Sửa lỗi bố cục trên Desktop */
-        .hero-section { background-color: var(--color-grey); padding: 30px 0; }
-        .hero-section .container { display: flex; flex-direction: column; gap: 30px; width: 100%; }
+        /* 2. HERO SECTION: Mở rộng toàn màn hình trên Desktop */
+        .hero-section { 
+            background-color: var(--color-grey); 
+            padding: 30px 0; 
+        }
+        .hero-section .container { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 30px; 
+            width: 100%; 
+        }
         .product-gallery { flex: 1; position: relative; }
         .product-info { flex: 1; }
         
-        @media (min-width: 768px) {
+        @media (min-width: 992px) { /* Sử dụng breakpoint lớn hơn để có không gian */
             .hero-section {
                 min-height: 100vh;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                padding: 30px 0;
-                margin-top: 0; /* Reset margin-top trên desktop */
+                padding: 40px; /* Thêm padding cho cân đối */
             }
-            /* Căn chỉnh lại container và các cột bên trong */
+            /* Mở rộng container ra gần full màn hình */
             .hero-section .container {
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
-                gap: 50px;
-                max-width: 960px;
+                gap: 60px;
+                max-width: 1200px; /* Tăng max-width */
             }
             .product-gallery, .product-info {
-                flex: 1 1 0; /* Cho phép các cột co giãn đều */
-                max-width: 50%; /* Giới hạn chiều rộng tối đa */
+                flex: 1 1 0;
+                max-width: 50%;
             }
-            .product-info h1 { font-size: 36px; }
+            /* Tăng cỡ chữ cho tương xứng */
+            .product-info h1 { font-size: 42px; }
+            .product-info .new-price { font-size: 38px; }
         }
-
-        /* 3. SỬA FOOTER: Tăng font chữ to hơn */
+        
         .footer h3 { font-size: 22px; margin-bottom: 10px; }
         .footer p, .footer-usp-item, .footer-contact p { font-size: 17px; line-height: 1.7; }
         
         /* === GIỮ NGUYÊN CÁC CSS CŨ & CSS TỪ CHECKLIST === */
-
+        
         .gallery-main .carousel-cell { width: 100%; aspect-ratio: 1/1; }
         .gallery-main .carousel-cell img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--border-radius); }
         .gallery-nav .carousel-cell { width: 16.66%; aspect-ratio: 1/1; margin-right: 10px; cursor: pointer; opacity: 0.6; border: 2px solid transparent; border-radius: 8px; overflow: hidden; }
@@ -133,25 +137,18 @@
         .review-card .stars { color: #fadb14; margin: 5px 0; }
         .video-slider .carousel-cell { width: 45%; margin-right: 15px; }
         @media (min-width: 768px) { .video-slider .carousel-cell { width: calc( (100% - 40px) / 3 ); } }
-        .video-thumbnail { position: relative; cursor: pointer; overflow: hidden; border-radius: var(--border-radius); box-shadow: var(--shadow); aspect-ratio: 9 / 16; }
-        .video-thumbnail img { width: 100%; height: 100%; object-fit: cover; }
-        .video-thumbnail .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: rgba(255,255,255,0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.2s; }
-        .video-thumbnail:hover .play-icon { transform: translate(-50%, -50%) scale(1.1); }
-        .play-icon svg { width: 30px; height: 30px; fill: var(--color-primary); }
+        
         .faq-item { border-bottom: 1px solid #eee; }
         .faq-question { padding: 15px 0; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
         .faq-question::before { content: '❓'; margin-right: 10px; }
         .faq-question::after { content: '+'; font-size: 24px; transition: transform 0.3s; }
         .faq-item.active .faq-question::after { transform: rotate(45deg); }
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding-left: 30px; }
-        .modal-overlay, .lightbox-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; }
-        .modal-overlay.visible, .lightbox-overlay.visible { display: flex; opacity: 1; }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; }
+        .modal-overlay.visible { display: flex; opacity: 1; }
         .modal-content { background: var(--color-light); padding: 25px; border-radius: var(--border-radius); box-shadow: 0 5px 20px rgba(0,0,0,0.2); width: 90%; max-width: 500px; max-height: 90vh; overflow-y: auto; position: relative; transform: scale(0.9); transition: transform 0.3s; }
-        .lightbox-content { position: relative; width: 90%; max-width: 800px; aspect-ratio: 16 / 9; transform: scale(0.9); transition: transform 0.3s; }
-        .modal-overlay.visible .modal-content, .lightbox-overlay.visible .lightbox-content { transform: scale(1); }
-        .modal-close, .lightbox-close { position: absolute; top: 15px; right: 15px; background: #eee; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 20px; cursor: pointer; line-height: 30px; text-align: center; }
-        .lightbox-close { top: -15px; right: -15px; background: white; color: black; }
-        .lightbox-content video { width: 100%; height: 100%; border-radius: var(--border-radius); }
+        .modal-overlay.visible .modal-content { transform: scale(1); }
+        .modal-close { position: absolute; top: 15px; right: 15px; background: #eee; border: none; border-radius: 50%; width: 30px; height: 30px; font-size: 20px; cursor: pointer; line-height: 30px; text-align: center; }
         .modal-content h2 { text-align: left; margin-bottom: 20px; }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
@@ -167,20 +164,17 @@
         .footer .container { display: flex; flex-direction: column; gap: 30px; }
         .footer-usp { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: center; }
         .footer-info, .footer-contact { text-align: center; }
-        .footer-info img { max-width: 120px; margin: 0 auto 10px; }
         
         @media (min-width: 768px) {
             .footer .container { flex-direction: row; justify-content: space-between; align-items: center; }
             .footer-left, .footer-right { flex: 1; }
             .footer-info, .footer-contact { text-align: left; }
-            .footer-info img { margin: 0 0 10px 0; }
         }
 
         .sticky-cta-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--color-light); padding: 10px; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); z-index: 999; display: none; }
         @media (max-width: 767px) {
             .sticky-cta-bar { display: block; }
             body { padding-bottom: 80px; }
-            .hero-section { margin-top: 53px; } /* Đảm bảo top-bar không che hero section trên mobile */
         }
         
         .video-slide { width: 80%; margin-right: 15px; padding: 10px; background-color: var(--color-light); border-radius: var(--border-radius); box-shadow: var(--shadow); }
@@ -409,7 +403,7 @@
                     <label for="address">Địa chỉ (*)</label>
                     <input type="text" id="address" name="address" required>
                 </div>
-                <div class="form-group">
+                <div class.form-group>
                     <label for="note">Ghi chú</label>
                     <textarea id="note" name="note"></textarea>
                 </div>
